@@ -1,4 +1,4 @@
-`stag0000` is a hidden developer stage included in the **USA, European and Japanese PlayStation 2 releases** of **Digimon World 4** (Digimon World X in Japan). It uses the practice stage’s grid platform, background and environment layout, with debug NPCs and objects placed around it.
+`stag0000` is a hidden developer stage included in the **PlayStation 2, GameCube and Xbox versions** of **Digimon World 4** (Digimon World X in Japan). It uses the practice stage’s grid platform, background and environment layout, with debug NPCs and objects placed around it.
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
@@ -30,14 +30,14 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 - **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
 - **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
 
-## Regional availability
+## Platform availability
 
-| PS2 release | Game ID | Developer stage |
+| Platform | Releases documented | Developer stage |
 | --- | --- | --- |
-| USA | `SLUS-20836` | `stag0000` |
-| Europe | `SLES-53405` | `stag0000` |
-| Japan — Digimon World X | `SLPS-25453` | `stag0000` |
+| PlayStation 2 | USA · Europe · Japan | `stag0000` |
+| GameCube | USA · Japan | `stag0000` |
+| Xbox | USA · Japan | `stag0000` |
 
-All three versions contain the same environment layout and the same nine-screen stage-select list. The [ISO patcher](access.html#create-a-dev-world-iso) supports all three releases.
+The listed releases contain the same nine-screen stage-select list. The [ISO patcher](access.html#create-a-dev-world-iso) supports the USA, European and Japanese PS2 images.
 
 Screenshots use a modified character with high stats. Entering the dev world does not itself grant those stats. English panels are annotations added to the screenshots; the in-game debug dialogue is Japanese.

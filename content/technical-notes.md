@@ -1,8 +1,8 @@
-## Regional stage data
+## Stage data across platforms
 
-The USA (`SLUS-20836`), European (`SLES-53405`) and Japanese (`SLPS-25453`) PS2 releases all include `stag0000`. In each version, its stage manifest is **NDMW.AFS entry 137**, and the manifest loads its scene and debug scripts from **entry 603**.
+`stag0000` is included in the USA, European and Japanese PS2 releases, and the USA and Japanese GameCube and Xbox releases. In each of these versions, its stage manifest is **NDMW.AFS entry 137**, and the manifest loads its scene and debug scripts from **entry 603**.
 
-The visible environment, floor collision, boundary collision, background and fog settings match across all three releases. Each version contains the same nine-screen stage-select list with 97 entries.
+Each version contains the same nine-screen stage-select list with 97 entries. The visible environment, floor collision, boundary collision, background and fog settings also match across the three PS2 releases.
 
 ## Shared practice-stage environment
 

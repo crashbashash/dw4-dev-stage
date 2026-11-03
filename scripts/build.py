@@ -14,7 +14,7 @@ OUT = ROOT / 'dist'
 URL = 'https://crashbashash.github.io/dw4-dev-world/'
 REPO = 'https://github.com/crashbashash/dw4-dev-world'
 PAGES = [
-    ('index', 'Overview', 'The developer world.', 'A hidden debug sandbox inside Digimon World 4’s retail PS2 release.'),
+    ('index', 'Overview', 'The developer world.', 'A hidden debug sandbox inside Digimon World 4.'),
     ('debug-npcs', 'Debug NPCs', 'The debug NPCs', 'Characters, menu options and English translations.'),
     ('stage-select', 'Stage select', '97 places to go.', 'The complete developer stage-select list, in script order.'),
     ('access', 'Access & controls', 'Getting there.', 'How to access the dev world and use its menus.'),

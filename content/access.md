@@ -1,8 +1,8 @@
-The developer stage is present in the **USA, European and Japanese PS2 releases**, but there is no known route through ordinary gameplay. You can reach it with a compatible dev-world savestate or by redirecting a stage transition to `stag0000`.
+The developer stage is present on **PlayStation 2, GameCube and Xbox**, but there is no known route through ordinary gameplay. You can reach it with a compatible dev-world savestate or by redirecting a stage transition to `stag0000`.
 
 ## Create a dev-world ISO
 
-The included patcher changes the character-selection transition so that it requests **`stag0000` instead of the Main Lobby**. It creates a separate ISO and leaves your original file unchanged.
+The included **PS2 patcher** changes the character-selection transition so that it requests **`stag0000` instead of the Main Lobby**. It creates a separate ISO and leaves your original file unchanged.
 
 1. Have an original **USA, European or Japanese PS2** image of Digimon World 4 (Digimon World X in Japan) and **Python 3.11 or newer**.
 2. [Download the dev-world patcher](assets/tools/patch_dev_world.py) and put it beside your ISO.
@@ -46,7 +46,7 @@ Savestates and patched game images are not included with this guide.
 
 ## Using the stage-select NPC
 
-Start inside the developer world, facing the Digi-Elf identified as **Digi-Elf 2**.
+Start inside the developer world, facing the Digi-Elf identified as **Digi-Elf 2**. The controls below use PS2 button names.
 
 1. Press **Cross** to talk, advance the introduction, and confirm the highlighted **とびます!とびます! / I’ll warp!** choice. Three Cross presses open the first stage-list screen.
 2. The cursor starts on **つぎのページ / Next page**. Confirm that line to advance a screen.

@@ -1,6 +1,6 @@
 # Digimon World 4 — Developer World
 
-A guide to `stag0000`, the hidden developer stage included in the USA, European and Japanese PlayStation 2 releases of Digimon World 4 (Digimon World X in Japan), its debug tools and how to access it.
+A guide to `stag0000`, the hidden developer stage included in the PlayStation 2, GameCube and Xbox versions of Digimon World 4 (Digimon World X in Japan), its debug tools and how to access it.
 
 **Website:** https://crashbashash.github.io/dw4-dev-world/
 
