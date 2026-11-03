@@ -2,7 +2,7 @@
 
 A guide to `stag0000`, the hidden developer stage included in the PlayStation 2, GameCube and Xbox versions of Digimon World 4 (Digimon World X in Japan), its debug tools and how to access it.
 
-**Website:** https://crashbashash.github.io/dw4-dev-world/
+**Website:** https://crashbashash.github.io/dw4-dev-stage/
 
 Includes the NPC menus and English translations, access notes, 97 stage-select entries in script order, annotated screenshots, and technical notes on the shared practice-stage environment.
 
@@ -30,7 +30,7 @@ Open http://localhost:8000/. The build writes the public website to `dist/` and 
 
 ## Publishing
 
-GitHub Pages uses **GitHub Actions** as its publishing source. `.github/workflows/pages.yml` builds and checks pull requests, and deploys successful builds on `main`. The live site uses the `/dw4-dev-world/` project path; internal links also work in a local preview.
+GitHub Pages uses **GitHub Actions** as its publishing source. `.github/workflows/pages.yml` builds and checks pull requests, and deploys successful builds on `main`. The live site uses the `/dw4-dev-stage/` project path; internal links also work in a local preview.
 
 ## Game content
 

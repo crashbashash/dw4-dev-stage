@@ -1,4 +1,4 @@
-Browse the dev world’s dialogue and menus, with English annotations. Each NPC has its own section below.
+Browse the developer stage’s dialogue and menus, with English annotations. Each NPC has its own section below.
 
 The annotations preserve the Japanese text as cropped game pixels and add English translations. Stage IDs are already ASCII. The images below are the existing annotated files, preserved without changes; click a capture to open it at full size.
 

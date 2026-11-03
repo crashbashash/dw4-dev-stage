@@ -70,6 +70,6 @@ The patch leaves the stage-select destinations and Leomon’s scripted return to
 
 ## Corrections and contributions
 
-[Open an issue](https://github.com/crashbashash/dw4-dev-world/issues) to suggest a correction or supply additional information. A screenshot, exact game version, or script reference helps document the behaviour precisely.
+[Open an issue](https://github.com/crashbashash/dw4-dev-stage/issues) to suggest a correction or supply additional information. A screenshot, exact game version, or script reference helps document the behaviour precisely.
 
 Game names, dialogue and screenshots belong to their respective rights holders. This is an unofficial guide to the developer stage.

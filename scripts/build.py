@@ -11,8 +11,8 @@ from markdown_it import MarkdownIt
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist'
-URL = 'https://crashbashash.github.io/dw4-dev-world/'
-REPO = 'https://github.com/crashbashash/dw4-dev-world'
+URL = 'https://crashbashash.github.io/dw4-dev-stage/'
+REPO = 'https://github.com/crashbashash/dw4-dev-stage'
 PAGES = [
     ('index', 'Overview', 'Developer Stage', 'A hidden debug sandbox inside Digimon World 4.'),
     ('debug-npcs', 'Debug NPCs', 'The debug NPCs', 'Characters, menu options and English translations.'),
