@@ -40,7 +40,7 @@ Savestates and patched game images are not included with this guide.
 
 Start inside the developer world, facing the Digi-Elf identified as **Digi-Elf 2**.
 
-1. Press **Cross** to talk, then advance the two dialogue lines. Three Cross presses open the first stage-list screen.
+1. Press **Cross** to talk, advance the introduction, and confirm the highlighted **とびます!とびます! / I’ll warp!** choice. Three Cross presses open the first stage-list screen.
 2. The cursor starts on **つぎのページ / Next page**. Confirm that line to advance a screen.
 3. On the desired screen, move down once for the first destination, twice for the second, and so on. The [stage table](stage-select.html) gives these row numbers directly.
 4. Press **Cross** to confirm the destination, then let the stage finish loading.

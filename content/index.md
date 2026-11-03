@@ -1,4 +1,4 @@
-`stag0000` is a hidden developer stage included in the USA PlayStation 2 release of **Digimon World 4**. A green grid hangs over a grey void, and the characters standing on it expose a collection of debug tools.
+`stag0000` is a hidden developer stage included in the USA PlayStation 2 release of **Digimon World 4**. It uses the practice stage’s grid platform, background and environment layout, with debug NPCs and objects placed around it.
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
@@ -27,7 +27,7 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 
 - **[Stage select](stage-select.html):** the complete destination list in script order, with screen and row numbers.
 - **[Access and controls](access.html):** the recorded entry methods and a controller-based guide to the menu.
-- **[Screenshot archive](gallery.html):** 90 annotated captures, grouped by NPC and capture sequence.
+- **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
 - **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
 
 ## Version covered

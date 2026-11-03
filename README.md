@@ -4,7 +4,7 @@ A guide to `stag0000`, the hidden developer stage included in the USA PlayStatio
 
 **Website:** https://crashbashash.github.io/dw4-dev-world/
 
-Includes the NPC menus and English translations, access notes, 97 stage-select destinations in script order, 90 annotated captures, and a record of corrections and open questions.
+Includes the NPC menus and English translations, access notes, 97 stage-select entries in script order, annotated screenshots, and technical notes on the shared practice-stage environment.
 
 The access guide includes a standalone Python patcher that creates a separate dev-world ISO from an original USA PS2 image. It contains no game data and changes only three fixed-length destination strings.
 
@@ -12,7 +12,7 @@ The access guide includes a standalone Python patcher that creates a separate de
 
 Edit the Markdown files in `content/` using GitHub’s file editor, then commit to `main`. The Publish website workflow builds, checks and deploys the site automatically. Edit `content/stages.json` for destination data; the published list and downloadable JSON are generated from the same file.
 
-Images live in `assets/images/`. The gallery is built from the annotated PNGs under `assets/images/translated/`. Filenames preserve capture order, not canonical stage-menu screen order.
+Images live in `assets/images/`. The gallery is built from the annotated PNGs under `assets/images/translated/`. Digi-Elf 2’s dialogue and nine unique stage-select screens appear together in its section. Its `screen-01.png` through `screen-09.png` filenames follow the menu order recorded in `content/stages.json`.
 
 ## Build and check locally
 

@@ -87,8 +87,18 @@ def main():
     if actual != expected or len(actual) != 97 or len(set(actual)) != 97:
         errors.append('Stage reference does not match the 97 unique destinations in source order')
     gallery = pages[(OUT / 'gallery.html').resolve()]
-    if len(gallery.images) != 90:
-        errors.append(f'Gallery needs 90 captures, got {len(gallery.images)}')
+    expected_images = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / 'assets/images/translated').glob('*/*.png'))
+    actual_images = [image['src'] for image in gallery.images]
+    if sorted(actual_images) != expected_images:
+        errors.append('Gallery must show each curated image exactly once')
+    expected_screens = [f'assets/images/translated/digi-elf-2/screen-{screen:02d}.png' for screen in range(1,10)]
+    actual_screens = [image for image in actual_images if '/screen-' in image]
+    if actual_screens != expected_screens or [p['screenshot'] for p in destinations] != expected_screens:
+        errors.append('Digi-Elf 2 needs nine unique screenshots in canonical menu order')
+    if len(set((OUT / path).read_bytes() for path in actual_screens)) != 9:
+        errors.append('Duplicate stage-menu screenshot')
+    if 'stage-list' in gallery.ids:
+        errors.append('The stage-list screenshots belong only in the Digi-Elf 2 section')
     for file in (OUT / 'assets/images').rglob('*.png'):
         header = file.read_bytes()[:24]
         if header[:8] != b'\x89PNG\r\n\x1a\n' or not all(struct.unpack('>II', header[16:24])):
@@ -101,7 +111,7 @@ def main():
             errors.append(f'Unexpected private or game binary file: {file.relative_to(ROOT)}')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(pages)} pages, {link_count} local references, 97 unique destinations and 90 gallery captures: all valid.')
+    print(f'Checked {len(pages)} pages, {link_count} local references, 97 unique stage entries and {len(gallery.images)} gallery screenshots: all valid.')
 
 
 if __name__ == '__main__':

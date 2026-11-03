@@ -14,7 +14,8 @@
       "stag0204",
       "stag0205",
       "stag0301"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-01.png"
   },
   {
     "screen": 2,
@@ -31,7 +32,8 @@
       "stagBS03",
       "stagBS04",
       "stagBS05"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-02.png"
   },
   {
     "screen": 3,
@@ -48,7 +50,8 @@
       "stagIS10",
       "stagIS11",
       "stagIS12"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-03.png"
   },
   {
     "screen": 4,
@@ -65,7 +68,8 @@
       "dng101b2",
       "dng102b1",
       "dng102b2"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-04.png"
   },
   {
     "screen": 5,
@@ -82,7 +86,8 @@
       "dng206f1",
       "dng206f2",
       "dng307b1"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-05.png"
   },
   {
     "screen": 6,
@@ -99,7 +104,8 @@
       "dng310f1",
       "dng310f2",
       "dng310f3"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-06.png"
   },
   {
     "screen": 7,
@@ -116,7 +122,8 @@
       "dngq1b2e",
       "dngq2b1e",
       "dngq2b2e"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-07.png"
   },
   {
     "screen": 8,
@@ -133,7 +140,8 @@
       "dngq4b2v",
       "dngq5b1e",
       "dngq5b1h"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-08.png"
   },
   {
     "screen": 9,
@@ -148,6 +156,7 @@
       "dngq8b3e",
       "dngq8b3h",
       "dngq8b3v"
-    ]
+    ],
+    "screenshot": "assets/images/translated/digi-elf-2/screen-09.png"
   }
 ]

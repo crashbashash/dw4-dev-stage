@@ -1,3 +1,18 @@
+## Shared practice-stage environment
+
+The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects are outside this comparison.
+
+| Environment data | Comparison |
+| --- | --- |
+| Visible background | Same 33-node scene, 12 geometry nodes and 3,219 vertices; positions, normals, UVs and triangle indices match |
+| Floor collision | Same two geometry nodes and 42 vertices |
+| Main boundary collision (`0x802`) | Same geometry and transforms |
+| Kind-4 collision graph | Same geometry and transforms |
+| Background and fog colour | Both store RGBA `(0.8, 0.7, 0.8, 1.0)`, giving the void a slight mauve tint |
+| Additional practice-stage wall | The practice stage has one extra kind-2 collision graph; the dev world does not |
+
+The shared visible layout does not mean that every object, interaction or collision rule is the same.
+
 ## Stage transitions
 
 The stage-select menu is stored in **AFS entry 603**. Its nine screen scripts supply 97 unique destination IDs. Each destination is paired with `PLAYERPOINT SETGENERATEPOS "I<0>"`.
@@ -39,7 +54,7 @@ The fixed-length replacements preserve the pack sizes and ISO layout. Across the
 
 The English annotations preserve Japanese game text as image pixels and place translations beside it. They may use Japanese or regional Digimon names that differ from the USA localisation.
 
-The screenshots include repeated menu screens. The stage-list filenames preserve capture sequence, not screen order. Use the [stage reference](stage-select.html) for the nine canonical screens.
+Digi-Elf 2’s gallery shows each stage-menu screen once, in the same order as the [stage reference](stage-select.html).
 
 ## Corrections and contributions
 

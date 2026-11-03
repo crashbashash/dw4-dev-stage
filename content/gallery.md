@@ -1,7 +1,7 @@
-Browse **90 annotated screenshots**: **50 dialogue/menu captures** and **40 stage-list captures**, including repeated screens.
+Browse the dev world’s dialogue and menus, with English annotations. Each NPC has its own section below.
 
 The annotations preserve the Japanese text as cropped game pixels and add English translations. Stage IDs are already ASCII. The images below are the existing annotated files, preserved without changes; click a capture to open it at full size.
 
-Capture filenames preserve the order in which the screenshots were taken. In particular, `page-01` in the stage-list captures is **not** menu screen 1. Use the [script-ordered stage list](stage-select.html) to find a destination.
+Digi-Elf 2’s section contains its introduction and warp choice, followed by **one screenshot of each of the nine stage-select screens in menu order**. The [stage reference](stage-select.html) lists the IDs and cursor rows shown on those screens.
 
 [[GALLERY]]

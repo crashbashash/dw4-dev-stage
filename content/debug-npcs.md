@@ -24,6 +24,17 @@ Selecting a size ends the conversation. Exactly which text responds to this sett
 
 After the opening dialogue, the game displays stage IDs and a **つぎのページ / Next page** option. There are **97 destinations on nine screens**, with eleven destinations on each of the first eight screens and nine on the last. Confirming an entry performs a real stage load.
 
+Before opening the list, the Digi-Elf offers:
+
+| Japanese option | English translation |
+| --- | --- |
+| とびます!とびます! | I’ll warp! I’ll warp! |
+| まだここにいる! | I’ll stay here! |
+
+Choose the first option to open the stage menu.
+
+[Dialogue and all nine menu screenshots →](gallery.html#digi-elf-2)
+
 [Complete stage list and menu procedure →](stage-select.html)
 
 ## Digi-Elf 3: play mode / difficulty

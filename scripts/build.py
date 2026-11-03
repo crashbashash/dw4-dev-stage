@@ -23,7 +23,7 @@ PAGES = [
 ]
 GROUPS = [
     ('digi-elf-1', 'Digi-Elf 1', 'Text-size options'),
-    ('digi-elf-2', 'Digi-Elf 2', 'Stage-select dialogue and menu captures'),
+    ('digi-elf-2', 'Digi-Elf 2', 'Stage-select dialogue and nine menu screens'),
     ('digi-elf-3', 'Digi-Elf 3', 'Play mode / difficulty'),
     ('digi-elf-4', 'Digi-Elf 4', 'TIME flag options'),
     ('digi-elf-5', 'Digi-Elf 5', 'Digivolution / evolution-arts unlocks'),
@@ -31,7 +31,6 @@ GROUPS = [
     ('leomon-1', 'Leomon', 'Return-to-lobby prompt'),
     ('rock-1', 'Rock 1', 'Item MAX'),
     ('rock-2', 'Rock 2', 'Money MAX'),
-    ('stage-list', 'Stage-list sequence', '40 capture frames, including repeated menu screens'),
 ]
 
 
@@ -64,7 +63,7 @@ def stage_markup(pages):
         markup.append(f'<section class="stage-screen" aria-labelledby="screen-{number}"><h3 id="screen-{number}">Screen {number:02d}</h3><p class="stage-script">{escape(page["script"])}</p><ol>')
         for row, stage in enumerate(page['stages'], 1):
             markup.append(f'<li value="{row}" data-stage="{escape(stage)}"><span id="{escape(stage)}">{escape(stage)}</span></li>')
-        markup.append('</ol></section>')
+        markup.append(f'</ol><p style="margin:1rem 0 0;font-size:.75rem"><a href="{escape(page["screenshot"])}">View screen {number} screenshot →</a></p></section>')
     markup.append('</div>')
     return ''.join(markup)
 
@@ -75,21 +74,41 @@ def gallery_markup():
         markup.append(f'<a href="#{group}">{escape(title)}</a>')
     markup.append('</nav>')
     for group, title, description in GROUPS:
-        folder = ROOT / 'assets/images/translated' / ('digi-elf-2/stage-list-pages' if group == 'stage-list' else group)
+        folder = ROOT / 'assets/images/translated' / group
         files = sorted(folder.glob('*.png'))
-        opened = ' open' if group == 'digi-elf-1' else ''
-        markup.append(f'<section class="gallery-group" aria-labelledby="{group}"><h2 id="{group}">{escape(title)}</h2><p>{escape(description)}</p><details{opened}><summary>Browse {len(files)} captures</summary><div class="gallery-grid">')
-        for file in files:
-            path = file.relative_to(ROOT).as_posix()
-            caption = f'{title} · {file.stem}'
-            extra = 'Capture sequence number; see the stage reference for screen order.' if group == 'stage-list' else 'Japanese game text with English annotations.'
-            markup.append(f'<figure class="capture"><a href="{path}" aria-label="Open {escape(caption)} at full size"><img src="{path}" loading="lazy" decoding="async" alt="{escape(caption)}: {escape(description)}"></a><figcaption>{escape(file.name)}<span>{escape(extra)}</span></figcaption></figure>')
-        markup.append('</div></details></section>')
+        opened = ' open' if group in {'digi-elf-1', 'digi-elf-2'} else ''
+        markup.append(f'<section class="gallery-group" aria-labelledby="{group}"><h2 id="{group}">{escape(title)}</h2><p>{escape(description)}</p><details{opened}><summary>Browse {len(files)} screenshots</summary>')
+        subsets = [(None, files)]
+        if group == 'digi-elf-2':
+            subsets = [('Dialogue', [f for f in files if not f.stem.startswith('screen-')]), ('Stage-select menu', [f for f in files if f.stem.startswith('screen-')])]
+        for heading, subset in subsets:
+            if heading:
+                markup.append(f'<h3>{heading}</h3>')
+            markup.append('<div class="gallery-grid">')
+            for file in subset:
+                path = file.relative_to(ROOT).as_posix()
+                caption = f'{title} · {file.stem}'
+                label = file.name
+                extra = 'Japanese game text with English annotations.'
+                if group == 'digi-elf-2':
+                    if file.stem.startswith('screen-'):
+                        number = int(file.stem.split('-')[1])
+                        caption = f'Digi-Elf 2 stage-select screen {number}'
+                        label = f'Stage-select screen {number}'
+                        extra = 'Stage IDs are shown in the same order as the stage reference.'
+                    else:
+                        label = 'Introduction' if file.stem == '02' else 'Warp or stay here'
+                        caption = f'Digi-Elf 2: {label.lower()}'
+                markup.append(f'<figure class="capture"><a href="{path}" aria-label="Open {escape(caption)} at full size"><img src="{path}" loading="lazy" decoding="async" alt="{escape(caption)}: {escape(description)}"></a><figcaption>{escape(label)}<span>{escape(extra)}</span></figcaption></figure>')
+            markup.append('</div>')
+        markup.append('</details></section>')
     return ''.join(markup)
 
 
 def main():
-    OUT.mkdir(exist_ok=True)
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    OUT.mkdir()
     shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True)
     pages = json.loads((ROOT / 'content/stages.json').read_text())
     assert [len(p['stages']) for p in pages] == [11] * 8 + [9]
@@ -105,7 +124,7 @@ def main():
         navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'><span aria-hidden="true">{i:02d}</span>{escape(l)}</a>' for i, (s, l, _, _) in enumerate(PAGES, 1))
         header = f'<header class="page-header"><p class="page-eyebrow">Dev world / {page_index + 1:02d}</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
         if slug == 'index':
-            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage: a green grid over a grey void, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
+            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage uses the practice stage’s grid platform and background, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
         footer_links = []
         if page_index:
             previous = PAGES[page_index - 1]
@@ -122,7 +141,8 @@ def main():
     (OUT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {URL}sitemap.xml\n')
     locations = ''.join(f'<url><loc>{URL}{"" if slug == "index" else slug + ".html"}</loc></url>' for slug, *_ in PAGES)
     (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + locations + '</urlset>\n')
-    print(f'Built {len(PAGES)} pages, 97 stage destinations and 90 gallery captures into dist/.')
+    gallery_count = len(list((ROOT / 'assets/images/translated').glob('*/*.png')))
+    print(f'Built {len(PAGES)} pages, 97 stage entries and {gallery_count} gallery screenshots into dist/.')
 
 
 if __name__ == '__main__':
