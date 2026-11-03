@@ -46,12 +46,24 @@ The patch leaves the stage-select destinations and Leomon’s scripted return to
 | Money MAX | `028-damage-calc-2.lua`, AFS entry 603 | Sets BIT to 9,999,999 for each joined player |
 | Item MAX | On-screen result message | Says “All items ×9”; exact item coverage is undocumented |
 
-## Functions that need more documentation
+## Debug menu behaviour
 
-- **TIME00–TIME06 and Field Quest:** the menu names are visible, but their gameplay effects and the code that reads the values still need tracing.
-- **NORMAL / MINIMUM:** the text-size choices are visible, but the affected text consumers are not yet identified.
-- **Play mode:** the menu offers Hard and Very Hard; the exact storage variable and its relationship to normal difficulty selection still need documenting.
-- **Other routes into the developer stage:** a `NEXTSTAGE "stag0000"` reference outside the stage-select list has been reported; its context and reachability need establishing.
+The following scripts are named resources in the developer-stage pack, **NDMW.AFS entry 603**. Their behaviour matches across the seven releases listed above.
+
+| Function | Script resource | Behaviour |
+| --- | --- | --- |
+| NORMAL / MINIMUM | `n_digilfm_01.lua` | Displays twelve sample text pages using `TEXTCTL TEXTSET` and waits for the `i_messky` confirmation selector between pages. NORMAL targets `STWINFONT02`; MINIMUM uses `STWINFONT04` for eight pages and `STWINFONT02` for the final four. It restores the interface and controls at the end. |
+| TIME00–TIME06 | `time00.lua` through `time06.lua` | Applies story presets through `FLGset` and persistent `SYSctlFlagFolder("SET"/"CLR", index)` writes. These are progression presets; they do not change a clock or request a stage transition. |
+| Field Quest | `fieldquest.lua` | Counts joined players at LV16 or above. If the count is nonzero, sets flags `63`, `64`, `97` and `98`; otherwise displays its refusal message. |
+| Hard / Very Hard | `hard.lua`, `veryhard.lua` | Writes progression flags, including `70`, `406` and `407`. Neither script calls `SYSsetDifficulty`. |
+
+The TIME presets select successive story phases using flags `1`–`6`. TIME02 and later set boss flag `67`; TIME04 and later also set `68`; TIME05 and later set `69`. TIME06 sets `70`, `83` and `86` as well. Persistent markers are cleared or set to match each preset, and TIME04–TIME06 call `SYSctlDeviceFolder("SET", player, "armor2", 42, 0, 0)` to give a Filter Board to player slots `0`–`3`.
+
+The Field Quest flags have identifiable readers: `63` selects field-event behaviour in Grief Wasteland (`stag0202`), `64` does the same in Mangrove Forest (`stag0302`), and `97`/`98` control two rescue states in Numenume River (`stag0103`) and related lobby dialogue.
+
+Hard and Very Hard both set flags `70`, `406` and `501`–`507`, and clear `508`. Hard clears `407` and `77`; Very Hard sets `407` and leaves `77` unchanged. The active difficulty is a separate common-player property, `DIFFICULTY`, read and written by `SYSgetDifficulty` / `SYSsetDifficulty`. Normal character selection publishes `0`, `1` or `2` to that property for Normal, Hard or Very Hard.
+
+[Menu choices and progression-preset summaries →](debug-npcs.html#digi-elf-4-time-flags)
 
 ## Corrections and contributions
 

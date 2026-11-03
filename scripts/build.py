@@ -15,17 +15,17 @@ URL = 'https://crashbashash.github.io/dw4-dev-stage/'
 REPO = 'https://github.com/crashbashash/dw4-dev-stage'
 PAGES = [
     ('index', 'Overview', 'Developer Stage', 'A hidden debug sandbox inside Digimon World 4.'),
-    ('debug-npcs', 'Debug NPCs', 'The debug NPCs', 'Characters, menu options and English translations.'),
+    ('debug-npcs', 'Debug NPCs', 'Debug NPCs', 'Characters, menu options and English translations.'),
     ('stage-select', 'Stage select', 'Stage select', 'The complete developer stage-select list, in script order.'),
-    ('access', 'Access & controls', 'Getting there.', 'How to access the developer stage and use its menus.'),
-    ('gallery', 'Screenshot gallery', 'The screenshot gallery.', 'The developer stage’s Japanese dialogue and menus, with English annotations.'),
-    ('technical-notes', 'Technical notes', 'Under the surface.', 'Stage transitions, cheat scripts and functions that need more documentation.'),
+    ('access', 'Access & controls', 'Access & controls', 'How to access the developer stage and use its menus.'),
+    ('gallery', 'Screenshot gallery', 'Screenshot gallery', 'The developer stage’s Japanese dialogue and menus, with English annotations.'),
+    ('technical-notes', 'Technical notes', 'Technical notes', 'Stage data, progression presets and debug-script behaviour.'),
 ]
 GROUPS = [
-    ('digi-elf-1', 'Digi-Elf 1', 'Text-size options'),
+    ('digi-elf-1', 'Digi-Elf 1', 'NORMAL / MINIMUM font preview'),
     ('digi-elf-2', 'Digi-Elf 2', 'Stage-select dialogue and nine menu screens'),
-    ('digi-elf-3', 'Digi-Elf 3', 'Play mode / difficulty'),
-    ('digi-elf-4', 'Digi-Elf 4', 'TIME flag options'),
+    ('digi-elf-3', 'Digi-Elf 3', 'Hard / Very Hard flag presets'),
+    ('digi-elf-4', 'Digi-Elf 4', 'Story-progression presets and Field Quest flags'),
     ('digi-elf-5', 'Digi-Elf 5', 'Digivolution / evolution-arts unlocks'),
     ('digi-elf-6', 'Digi-Elf 6', 'EXP and level targets'),
     ('leomon-1', 'Leomon', 'Return-to-lobby prompt'),
@@ -66,7 +66,7 @@ def stage_markup(pages):
             name = stage['name'] or stage['description']
             search = ' '.join((stage_id, name))
             markup.append(f'<li value="{row}" data-stage="{escape(stage_id)}" data-search="{escape(search, quote=True)}"><span class="stage-label"><code id="{escape(stage_id)}">{escape(stage_id)}</code><span class="stage-separator" aria-hidden="true">|</span><span class="stage-name">{escape(name)}</span></span></li>')
-        markup.append(f'</ol><p style="margin:1rem 0 0;font-size:.75rem"><a href="{escape(page["screenshot"])}">View screen {number} screenshot →</a></p></section>')
+        markup.append(f'</ol><p class="stage-screenshot-link"><a href="{escape(page["screenshot"])}">View screen {number} screenshot →</a></p></section>')
     markup.append('</div>')
     return ''.join(markup)
 
@@ -126,10 +126,13 @@ def main():
         body = body.replace('<p>[[STAGES]]</p>', stage_markup(pages))
         body = body.replace('<p>[[GALLERY]]</p>', gallery_markup())
         body = body.replace('<table>', '<div class="table-scroll" role="region" aria-label="Reference table" tabindex="0"><table>').replace('</table>', '</table></div>')
-        navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'><span aria-hidden="true">{i:02d}</span>{escape(l)}</a>' for i, (s, l, _, _) in enumerate(PAGES, 1))
-        header = f'<header class="page-header"><p class="page-eyebrow">Developer stage / {page_index + 1:02d}</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
+        navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'>{escape(l)}</a>' for s, l, _, _ in PAGES)
+        header = f'<header class="page-header"><p class="page-eyebrow">Digimon World 4</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
         if slug == 'index':
-            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage uses the practice stage’s grid platform and background, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
+            introduction, separator, following_sections = body.partition('<h2 ')
+            assert separator, 'Overview needs a section after its introduction'
+            body = separator + following_sections
+            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><div class="home-intro">{introduction}</div></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage uses the practice stage’s grid platform and background, with Digi-Elves, Leomon and debug objects."><figcaption>Developer Stage · stag0000</figcaption></figure></header>'
         footer_links = []
         if page_index:
             previous = PAGES[page_index - 1]

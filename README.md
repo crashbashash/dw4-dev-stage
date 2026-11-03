@@ -4,7 +4,7 @@ A guide to `stag0000`, the hidden developer stage included in the PlayStation 2,
 
 **Website:** https://crashbashash.github.io/dw4-dev-stage/
 
-Includes the NPC menus and English translations, access notes, 97 stage-select entries with in-game names in script order, annotated screenshots, and technical notes on the shared practice-stage environment.
+Includes the NPC menus and English translations, access notes, 97 stage-select entries with in-game names in script order, annotated screenshots, and technical notes on debug scripts and platform differences.
 
 The access guide includes a standalone Python patcher that automatically detects PS2 (USA, Europe, Japan), GameCube (USA, Japan) and Xbox (USA, Japan) images and creates a separate developer-stage ISO. It supports PS2 ISO, GameCube ISO/GCM and CISO, and Xbox game-partition XISO. CISO input becomes a plain ISO. It contains no game data. It redirects the native login controller and enables the full developer stage NPC roster without changing saved progression flags.
 

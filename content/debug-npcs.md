@@ -1,8 +1,8 @@
 Names such as `digi-elf-1` identify individual characters in this guide. The six Digi-Elves all display デジルフ in the game.
 
-## Digi-Elf 1: text size
+## Digi-Elf 1: font preview
 
-The opening dialogue asks the player to choose a character size.
+The opening dialogue offers a preview of the game’s text at NORMAL or MINIMUM size.
 
 | Japanese option | English translation |
 | --- | --- |
@@ -10,11 +10,13 @@ The opening dialogue asks the player to choose a character size.
 | MINIMUMでおねがいします | MINIMUM, please |
 | スミマセン、みるのやめます | Sorry, I’ll stop looking |
 
-Selecting a size ends the conversation. Exactly which text responds to this setting remains undocumented.
+Selecting a size closes the dialogue window and starts a sequence of twelve sample text pages. Each page waits for confirmation before advancing. The sequence then restores the normal interface and player controls. Cancel closes the conversation.
 
-![Annotated capture of the Digi-Elf text-size menu](assets/images/translated/digi-elf-1/03-menu-default.png)
+This is a font-preview sequence rather than a global text-size setting. NORMAL uses `STWINFONT02`; MINIMUM starts with `STWINFONT04`, then uses `STWINFONT02` for its final four pages.
 
-[All text-size captures →](gallery.html#digi-elf-1)
+![Annotated capture of the Digi-Elf font-preview menu](assets/images/translated/digi-elf-1/03-menu-default.png)
+
+[Font-preview captures →](gallery.html#digi-elf-1)
 
 ## Digi-Elf 2: stage select
 
@@ -49,7 +51,9 @@ Choose the first option to open the stage menu.
 | ハード | Hard |
 | ベリーハード | Very Hard |
 
-The exact storage variable and its relationship to the normal game’s difficulty selection remain undocumented.
+These choices apply progression-flag presets. Both mark the final-boss flag `70` and flag `406` as set. Hard clears flag `407`; Very Hard sets it. Both also set flags `501`–`507` and clear `508`. Hard additionally clears flag `77`.
+
+The scripts do not directly change the active `DIFFICULTY` value used by the game. Normal character selection sets that value separately: `0` for Normal, `1` for Hard and `2` for Very Hard.
 
 [Difficulty-menu captures →](gallery.html#digi-elf-3)
 
@@ -67,7 +71,23 @@ After a yes/no prompt, the menu offers three groups:
 | 2 | Next page · TIME03 · TIME04 · TIME05 |
 | 3 | TIME06 · フィールドクエスト / Field Quest · Cancel |
 
-The gameplay effects of these flags remain undocumented. Their names alone do not establish a time-of-day system.
+TIME00–TIME06 are story-progression presets. They rewrite groups of event flags, boss-clear flags and persistent dungeon markers to put the game at different points in the story.
+
+| Choice | Progression preset |
+| --- | --- |
+| TIME00 | Beginning of the game; clears the listed boss-clear flags and persistent markers `0`–`10` |
+| TIME01 | Death Valley story phase, before its boss is marked defeated |
+| TIME02 | Death Valley complete, before the next lobby story transition |
+| TIME03 | Dry Land story phase, with Death Valley already complete |
+| TIME04 | Dry Land complete |
+| TIME05 | Venom Jungle complete |
+| TIME06 | Main story complete, including the final boss and Electro Mine clear flags |
+
+TIME04–TIME06 also give each player slot a Filter Board. The presets change progression data without moving the player to another stage.
+
+**Field Quest** checks for at least one joined player at **LV16 or above**. When that condition is met, it sets flags `63`, `64`, `97` and `98`. These flags are used by the Grief Wasteland and Mangrove Forest field events and two Numenume River rescue states. If no joined player meets the level condition, it displays the refusal message without setting those flags.
+
+[Script references and flag details →](technical-notes.html#debug-menu-behaviour)
 
 [TIME-flag captures →](gallery.html#digi-elf-4)
 

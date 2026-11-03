@@ -2,7 +2,7 @@
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
-**[Access the developer stage →](access.html#create-a-developer-stage-iso)**
+<a class="button-primary" href="access.html#create-a-developer-stage-iso">Access the developer stage</a>
 
 ## A debug menu you can walk around
 
@@ -10,10 +10,10 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 
 | Character or object | Function |
 | --- | --- |
-| Digi-Elf 1 | NORMAL / MINIMUM text-size options |
+| Digi-Elf 1 | NORMAL / MINIMUM font preview |
 | Digi-Elf 2 | Stage select: 97 destinations across nine screens |
-| Digi-Elf 3 | Hard / Very Hard play-mode options |
-| Digi-Elf 4 | TIME00–TIME06 and Field Quest flag menu |
+| Digi-Elf 3 | Hard / Very Hard progression-flag presets |
+| Digi-Elf 4 | TIME00–TIME06 story presets and Field Quest flags |
 | Digi-Elf 5 | Digivolution unlock menu, labelled “evolution arts” in the translations |
 | Digi-Elf 6 | EXP grants for selected level targets |
 | Leomon | Finish debug mode and return to the Main Lobby |
@@ -28,7 +28,7 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 - **[Stage select](stage-select.html):** the complete destination list in script order, with screen and row numbers.
 - **[Access and controls](access.html):** how to enter the developer stage and use the stage-select menu.
 - **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
-- **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
+- **[Technical notes](technical-notes.html):** script references, entry positions, progression flags and platform differences.
 
 ## Platform availability
 

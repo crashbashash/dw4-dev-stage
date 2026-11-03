@@ -61,7 +61,7 @@ def main():
         if duplicates:
             errors.append(f'{file.name}: duplicate IDs {duplicates}')
         for image in page.images:
-            if not image.get('alt'):
+            if not image.get('alt') and image.get('aria-hidden') != 'true':
                 errors.append(f'{file.name}: image needs alt text: {image.get("src")}')
         if re.search(r'\[\[[A-Z]+\]\]|/home/|/Users/|file://|\bsurvey\b|\b20\d\d\b', text, re.I):
             errors.append(f'{file.name}: unresolved marker, local path or unwanted dated/survey wording')
@@ -88,7 +88,8 @@ def main():
         errors.append('Stage reference does not match the 97 unique destinations in source order')
     gallery = pages[(OUT / 'gallery.html').resolve()]
     expected_images = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / 'assets/images/translated').glob('*/*.png'))
-    actual_images = [image['src'] for image in gallery.images]
+    gallery_images = [image for image in gallery.images if image.get('aria-hidden') != 'true']
+    actual_images = [image['src'] for image in gallery_images]
     if sorted(actual_images) != expected_images:
         errors.append('Gallery must show each curated image exactly once')
     expected_screens = [f'assets/images/translated/digi-elf-2/screen-{screen:02d}.png' for screen in range(1,10)]
@@ -111,7 +112,7 @@ def main():
             errors.append(f'Unexpected private or game binary file: {file.relative_to(ROOT)}')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(pages)} pages, {link_count} local references, 97 unique stage entries and {len(gallery.images)} gallery screenshots: all valid.')
+    print(f'Checked {len(pages)} pages, {link_count} local references, 97 unique stage entries and {len(gallery_images)} gallery screenshots: all valid.')
 
 
 if __name__ == '__main__':
