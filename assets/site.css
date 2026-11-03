@@ -43,9 +43,8 @@ h3 { font-size: 16px; font-weight: 600; margin: 24px 0 12px; }
 .skip-link:focus { top: 8px; }
 .site-header { background: var(--panel); border-bottom: 1px solid var(--line); }
 .header-inner { max-width: 1440px; margin: auto; min-height: 64px; padding: 10px 24px; display: flex; align-items: center; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-size: 17px; font-weight: 700; line-height: 1.35; }
+.brand { display: inline-block; color: var(--text); font-size: 17px; font-weight: 700; line-height: 1.35; }
 .brand:hover { text-decoration: none; }
-.brand img { width: 32px; height: 32px; }
 .brand-sub { display: block; color: var(--muted); font-size: 12px; font-weight: 400; margin-top: 2px; }
 .site-shell { max-width: 1440px; display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 32px; margin: auto; padding: 28px 24px 48px; }
 .sidebar { align-self: start; position: sticky; top: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 8px; }
