@@ -1,4 +1,4 @@
-`stag0000` is a hidden developer stage included in the USA PlayStation 2 release of **Digimon World 4**. It uses the practice stage’s grid platform, background and environment layout, with debug NPCs and objects placed around it.
+`stag0000` is a hidden developer stage included in the **USA, European and Japanese PlayStation 2 releases** of **Digimon World 4** (Digimon World X in Japan). It uses the practice stage’s grid platform, background and environment layout, with debug NPCs and objects placed around it.
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
@@ -30,8 +30,14 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 - **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
 - **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
 
-## Version covered
+## Regional availability
 
-This reference covers the **USA PS2 release, SLUS-20836**. It includes the dev world’s NPCs, translated menus, access methods, and the complete stage-select list.
+| PS2 release | Game ID | Developer stage |
+| --- | --- | --- |
+| USA | `SLUS-20836` | `stag0000` |
+| Europe | `SLES-53405` | `stag0000` |
+| Japan — Digimon World X | `SLPS-25453` | `stag0000` |
+
+All three versions contain the same environment layout and the same nine-screen stage-select list. The [ISO patcher](access.html#create-a-dev-world-iso) supports all three releases.
 
 Screenshots use a modified character with high stats. Entering the dev world does not itself grant those stats. English panels are annotations added to the screenshots; the in-game debug dialogue is Japanese.

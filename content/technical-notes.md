@@ -1,3 +1,9 @@
+## Regional stage data
+
+The USA (`SLUS-20836`), European (`SLES-53405`) and Japanese (`SLPS-25453`) PS2 releases all include `stag0000`. In each version, its stage manifest is **NDMW.AFS entry 137**, and the manifest loads its scene and debug scripts from **entry 603**.
+
+The visible environment, floor collision, boundary collision, background and fog settings match across all three releases. Each version contains the same nine-screen stage-select list with 97 entries.
+
 ## Shared practice-stage environment
 
 The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects differ between the stages.
@@ -23,15 +29,15 @@ The complete destination data is available as [JSON](assets/data/stages.json).
 
 ## Character-selection patch
 
-The [access patcher](assets/tools/patch_dev_world.py) replaces the eight-byte string `stagML11` with `stag0000` in three character-selection packs. It checks the original USA ISO’s size and MD5 before creating a separate copy.
+The [access patcher](assets/tools/patch_dev_world.py) replaces the eight-byte string `stagML11` with `stag0000` in three character-selection packs. It identifies the USA, European or Japanese image by size and MD5, then applies that release’s offsets to a separate copy.
 
-| AFS entry | ISO byte offset | Replacement |
-| --- | --- | --- |
-| 808 | `0x471DB773` | `stagML11` → `stag0000` |
-| 810 | `0x4722B38B` | `stagML11` → `stag0000` |
-| 812 | `0x4730C52F` | `stagML11` → `stag0000` |
+| Region | AFS entry 808 | AFS entry 810 | AFS entry 812 |
+| --- | --- | --- | --- |
+| USA | `0x471DB773` | `0x4722B38B` | `0x4730C52F` |
+| Europe | `0x469B7B6B` | `0x46A35867` | `0x46AC745F` |
+| Japan | `0x471C7957` | `0x47240177` | `0x473A3AD3` |
 
-The fixed-length replacements preserve the pack sizes and ISO layout. Across the image they change twelve bytes in total. These offsets apply only to the exact USA image accepted by the patcher.
+Each entry replaces `stagML11` with `stag0000`. The fixed-length replacements preserve the pack sizes and ISO layout, changing twelve bytes in total. The offsets apply to the original images listed in the [access guide](access.html).
 
 ## Unlocks and cheats
 
@@ -48,12 +54,6 @@ The fixed-length replacements preserve the pack sizes and ISO layout. Across the
 - **NORMAL / MINIMUM:** the text-size choices are visible, but the affected text consumers are not yet identified.
 - **Play mode:** the menu offers Hard and Very Hard; the exact storage variable and its relationship to normal difficulty selection still need documenting.
 - **Other routes into the dev world:** a `NEXTSTAGE "stag0000"` reference outside the stage-select list has been reported; its context and reachability need establishing.
-
-## Screenshot notes
-
-The English annotations preserve Japanese game text as image pixels and place translations beside it. They may use Japanese or regional Digimon names that differ from the USA localisation.
-
-Digi-Elf 2’s gallery shows each stage-menu screen once, in the same order as the [stage reference](stage-select.html).
 
 ## Corrections and contributions
 
