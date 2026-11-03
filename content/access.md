@@ -46,18 +46,6 @@ The patch redirects the native login destination and enables the full NPC roster
 
 Savestates and patched game images are not included with this guide.
 
-## Using the stage-select NPC
-
-Start inside the developer stage, facing the Digi-Elf identified as **Digi-Elf 2**. The controls below use PS2 button names.
-
-1. Press **Cross** to talk, advance the introduction, and confirm the highlighted **とびます!とびます! / I’ll warp!** choice. Three Cross presses open the first stage-list screen.
-2. The cursor starts on **つぎのページ / Next page**. Confirm that line to advance a screen.
-3. On the desired screen, use the **left stick** to move down once for the first destination, twice for the second, and so on. The [stage table](stage-select.html) gives these row numbers directly.
-4. Press **Cross** to confirm the destination, then let the stage finish loading.
-5. Check the resulting scene or loading banner to confirm the destination.
-
-For example, **`dng102b3` is screen 5, row 1**: open the list, advance four screens, move down once, and confirm.
-
 ## Savestates and disc changes
 
 A savestate restores a world that is already loaded in RAM. **Loading it does not refresh that world’s assets from the disc.** After changing discs, load your destination through the stage-select menu to use the new disc’s assets.

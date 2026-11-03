@@ -4,7 +4,7 @@ Every screen starts with **つぎのページ / Next page**, above the destinati
 
 The nine menu scripts in **AFS entry 603** define this list. Every listed destination is paired with `PLAYERPOINT SETGENERATEPOS "I<0>"`. Leomon’s separate return-to-lobby action uses position 3.
 
-[Controller procedure and access notes →](access.html#using-the-stage-select-npc)
+[Stage-select controls →](debug-npcs.html#using-the-stage-select-npc)
 
 ## Find a destination
 

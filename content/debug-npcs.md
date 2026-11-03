@@ -35,9 +35,21 @@ Before opening the list, the Digi-Elf offers:
 
 Choose the first option to open the stage menu.
 
+### Using the stage-select NPC
+
+Start inside the developer stage, facing the Digi-Elf identified as **Digi-Elf 2**. The controls below use PS2 button names.
+
+1. Press **Cross** to talk, advance the introduction, and confirm the highlighted **とびます!とびます! / I’ll warp!** choice. Three Cross presses open the first stage-list screen.
+2. The cursor starts on **つぎのページ / Next page**. Confirm that line to advance a screen.
+3. On the desired screen, use the **left stick** to move down once for the first destination, twice for the second, and so on. The [stage table](stage-select.html) gives these row numbers directly.
+4. Press **Cross** to confirm the destination, then let the stage finish loading.
+5. Check the resulting scene or loading banner to confirm the destination.
+
+For example, **`dng102b3` is screen 5, row 1**: open the list, advance four screens, move down once, and confirm.
+
 [Dialogue and all nine menu screenshots →](gallery.html#digi-elf-2)
 
-[Complete stage list and menu procedure →](stage-select.html)
+[Complete stage list →](stage-select.html)
 
 ## Digi-Elf 3: play mode / difficulty
 

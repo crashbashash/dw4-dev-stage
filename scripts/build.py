@@ -15,9 +15,9 @@ URL = 'https://crashbashash.github.io/dw4-dev-stage/'
 REPO = 'https://github.com/crashbashash/dw4-dev-stage'
 PAGES = [
     ('index', 'Overview', 'Developer Stage', 'A hidden debug sandbox inside Digimon World 4.'),
-    ('debug-npcs', 'Debug NPCs', 'Debug NPCs', 'Characters, menu options and English translations.'),
+    ('debug-npcs', 'Debug NPCs', 'Debug NPCs', 'Characters, menu options, controls and English translations.'),
     ('stage-select', 'Stage select', 'Stage select', 'The complete developer stage-select list, in script order.'),
-    ('access', 'Access & controls', 'Access & controls', 'How to access the developer stage and use its menus.'),
+    ('access', 'Access', 'Access', 'How to access the developer stage.'),
     ('gallery', 'Screenshot gallery', 'Screenshot gallery', 'The developer stage’s Japanese dialogue and menus, with English annotations.'),
     ('technical-notes', 'Technical notes', 'Technical notes', 'Stage data, progression presets and debug-script behaviour.'),
 ]
