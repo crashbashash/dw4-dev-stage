@@ -1,6 +1,6 @@
 ## Shared practice-stage environment
 
-The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects are outside this comparison.
+The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects differ between the stages.
 
 | Environment data | Comparison |
 | --- | --- |
@@ -40,7 +40,7 @@ The fixed-length replacements preserve the pack sizes and ISO layout. Across the
 | Unlock all Digivolutions | `030-msg-80031.lua`, AFS entry 603 | Calls `SYSctlShinka("SETSHINKA", ...)` for indices 0–15 for each joined player |
 | Individual unlocks | `031-msg-80067.lua` through `046-msg-80082.lua`, AFS entry 603 | Calls `SETSHINKA` with the selected index for the interacting player |
 | Money MAX | `028-damage-calc-2.lua`, AFS entry 603 | Sets BIT to 9,999,999 for each joined player |
-| Item MAX | On-screen result message | Reports that all items became ×9; the exact effect on every individual item remains unverified |
+| Item MAX | On-screen result message | Says “All items ×9”; exact item coverage is undocumented |
 
 ## Functions that need more documentation
 
@@ -48,7 +48,6 @@ The fixed-length replacements preserve the pack sizes and ISO layout. Across the
 - **NORMAL / MINIMUM:** the text-size choices are visible, but the affected text consumers are not yet identified.
 - **Play mode:** the menu offers Hard and Very Hard; the exact storage variable and its relationship to normal difficulty selection still need documenting.
 - **Other routes into the dev world:** a `NEXTSTAGE "stag0000"` reference outside the stage-select list has been reported; its context and reachability need establishing.
-- **Individual level and unlock choices:** the menu pages are documented, but not every possible result has a separate capture or behaviour check.
 
 ## Screenshot notes
 

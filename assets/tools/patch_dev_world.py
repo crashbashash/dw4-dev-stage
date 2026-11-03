@@ -11,8 +11,8 @@ import sys
 
 ORIGINAL_MD5 = '3185f04230b1dabd853db750e4b51108'
 ORIGINAL_SIZE = 1448902656
-# Byte offsets inside the exact original image, checked against the AFS directory
-# and each entry's unique length-prefixed NEXTSTAGE string.
+# Byte offsets of the unique length-prefixed NEXTSTAGE strings inside the exact
+# original image's three character-selection packs.
 PATCHES = ((808, 0x471DB773), (810, 0x4722B38B), (812, 0x4730C52F))
 BEFORE = b'stagML11'
 AFTER = b'stag0000'

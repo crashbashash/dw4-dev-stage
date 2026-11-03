@@ -26,7 +26,7 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 ## Explore the dev world
 
 - **[Stage select](stage-select.html):** the complete destination list in script order, with screen and row numbers.
-- **[Access and controls](access.html):** the recorded entry methods and a controller-based guide to the menu.
+- **[Access and controls](access.html):** how to enter the dev world and use the stage-select menu.
 - **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
 - **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
 

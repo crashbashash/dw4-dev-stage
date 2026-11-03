@@ -108,7 +108,7 @@ After granting EXP, the NPC instructs the player to hit the neighbouring Goblimo
 
 > “I raised your EXP, so… please punch the Goblimon next to you… your LV will go up by 1…”
 
-The grant does not directly complete the level-up. The two Goblimon have no recorded dialogue and provide combat targets for resolving it.
+The grant does not directly complete the level-up. The two Goblimon provide combat targets for resolving it.
 
 [EXP-menu captures →](gallery.html#digi-elf-6)
 
@@ -133,6 +133,6 @@ The Japanese name レオモン identifies this character as **Leomon**.
 | Rock 1 | アイテム MAX / アイテム すべてx9 になりました | ITEM MAX / All items became ×9 |
 | Rock 2 | おかね MAX / BITが 9999999 になりました | MONEY MAX / BIT became 9,999,999 |
 
-The money script explicitly sets BIT to **9,999,999** for joined players. “All items ×9” is the item cheat’s displayed message; its effect on every individual item has not been verified.
+The money script explicitly sets BIT to **9,999,999** for joined players. The item cheat’s message says “All items ×9”; its exact item coverage is undocumented.
 
 [Item-cheat captures →](gallery.html#rock-1) · [Money-cheat captures →](gallery.html#rock-2)

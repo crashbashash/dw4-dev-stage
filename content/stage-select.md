@@ -2,7 +2,7 @@
 
 Every screen starts with **つぎのページ / Next page**, above the destinations. In this reference, **row 1 means one downward cursor step from Next page**. Confirming a destination triggers the game’s normal stage-load process.
 
-The list was checked against the nine recovered menu scripts in **AFS entry 603**. Every listed destination is paired with `PLAYERPOINT SETGENERATEPOS "I<0>"`. Leomon’s separate return-to-lobby action uses position 3.
+The nine menu scripts in **AFS entry 603** define this list. Every listed destination is paired with `PLAYERPOINT SETGENERATEPOS "I<0>"`. Leomon’s separate return-to-lobby action uses position 3.
 
 [Controller procedure and access notes →](access.html#using-the-stage-select-npc)
 
