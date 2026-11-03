@@ -16,4 +16,4 @@ Each entry pairs its stage ID with the English stage name shown in-game. Floors 
 
 ## What a listed destination establishes
 
-Selecting an entry loads that destination. For example, `stagGF01` displays the “Guard Room / Goblin Fortress” banner. Story events and quest behaviour can still depend on your progression flags; a debug warp does not automatically supply the required progression.
+Selecting an entry loads that destination. For example, `stagGF01` displays the “Guard Room” loading banner. Story events and quest behaviour can still depend on your progression flags; a debug warp does not automatically supply the required progression.
