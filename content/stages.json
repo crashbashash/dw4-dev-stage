@@ -1,0 +1,153 @@
+[
+  {
+    "screen": 1,
+    "script": "048-msg-80106.lua",
+    "stages": [
+      "stag0001",
+      "stag0101",
+      "stag0102",
+      "stag0103",
+      "stag0104",
+      "stag0201",
+      "stag0202",
+      "stag0203",
+      "stag0204",
+      "stag0205",
+      "stag0301"
+    ]
+  },
+  {
+    "screen": 2,
+    "script": "049-msg-80118.lua",
+    "stages": [
+      "stag0302",
+      "stag0303",
+      "stag0304",
+      "stag0401",
+      "stag0403",
+      "stag0404",
+      "stagBS01",
+      "stagBS02",
+      "stagBS03",
+      "stagBS04",
+      "stagBS05"
+    ]
+  },
+  {
+    "screen": 3,
+    "script": "050-msg-80129.lua",
+    "stages": [
+      "stagBS06",
+      "stagGF01",
+      "stagGF02",
+      "stagGF03",
+      "stagGF04",
+      "stagIS07",
+      "stagIS08",
+      "stagIS09",
+      "stagIS10",
+      "stagIS11",
+      "stagIS12"
+    ]
+  },
+  {
+    "screen": 4,
+    "script": "065-msg-80140.lua",
+    "stages": [
+      "stagIS13",
+      "stagIS20",
+      "stagML02",
+      "stagML11",
+      "stagML12",
+      "stagML13",
+      "stagML14",
+      "dng101b1",
+      "dng101b2",
+      "dng102b1",
+      "dng102b2"
+    ]
+  },
+  {
+    "screen": 5,
+    "script": "066-msg-80151.lua",
+    "stages": [
+      "dng102b3",
+      "dng103f1",
+      "dng103f2",
+      "dng204b1",
+      "dng204b2",
+      "dng205b1",
+      "dng205b2",
+      "dng205b3",
+      "dng206f1",
+      "dng206f2",
+      "dng307b1"
+    ]
+  },
+  {
+    "screen": 6,
+    "script": "067-msg-80162.lua",
+    "stages": [
+      "dng307b2",
+      "dng308b1",
+      "dng308b2",
+      "dng308b3",
+      "dng309b1",
+      "dng309b2",
+      "dng309b3",
+      "dng309b4",
+      "dng310f1",
+      "dng310f2",
+      "dng310f3"
+    ]
+  },
+  {
+    "screen": 7,
+    "script": "068-msg-80173.lua",
+    "stages": [
+      "dng411b1",
+      "dng411b2",
+      "dng411b3",
+      "dng412b1",
+      "dng412b2",
+      "dng412b3",
+      "dng412b4",
+      "dngq1b1e",
+      "dngq1b2e",
+      "dngq2b1e",
+      "dngq2b2e"
+    ]
+  },
+  {
+    "screen": 8,
+    "script": "069-msg-80184.lua",
+    "stages": [
+      "dngq2b2h",
+      "dngq3b1e",
+      "dngq3b2e",
+      "dngq4b1e",
+      "dngq4b1h",
+      "dngq4b1v",
+      "dngq4b2e",
+      "dngq4b2h",
+      "dngq4b2v",
+      "dngq5b1e",
+      "dngq5b1h"
+    ]
+  },
+  {
+    "screen": 9,
+    "script": "070-msg-80216.lua",
+    "stages": [
+      "dngq5b1v",
+      "dngq6b01",
+      "dngq7b1e",
+      "dngq7b2e",
+      "dngq8b1e",
+      "dngq8b2e",
+      "dngq8b3e",
+      "dngq8b3h",
+      "dngq8b3v"
+    ]
+  }
+]
