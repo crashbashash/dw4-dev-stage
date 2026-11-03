@@ -5,58 +5,47 @@
     "stages": [
       {
         "id": "stag0001",
-        "name": "Practice Stage",
-        "area": "Death Valley"
+        "name": "Practice Stage"
       },
       {
         "id": "stag0101",
-        "name": "Goblin Pass",
-        "area": "Death Valley"
+        "name": "Goblin Pass"
       },
       {
         "id": "stag0102",
-        "name": "Abyss of Grief",
-        "area": "Death Valley"
+        "name": "Abyss of Grief"
       },
       {
         "id": "stag0103",
-        "name": "Numenume River",
-        "area": "Death Valley"
+        "name": "Numenume River"
       },
       {
         "id": "stag0104",
-        "name": "Doom Dome",
-        "area": "Death Valley"
+        "name": "Doom Dome"
       },
       {
         "id": "stag0201",
-        "name": "Mummy Desert",
-        "area": "Dry Land"
+        "name": "Mummy Desert"
       },
       {
         "id": "stag0202",
-        "name": "Grief Wasteland",
-        "area": "Dry Land"
+        "name": "Grief Wasteland"
       },
       {
         "id": "stag0203",
-        "name": "Train Line",
-        "area": "Dry Land"
+        "name": "Train Line"
       },
       {
         "id": "stag0204",
-        "name": "Station X",
-        "area": "Dry Land"
+        "name": "Station X"
       },
       {
         "id": "stag0205",
-        "name": "Power Plant",
-        "area": "Dry Land"
+        "name": "Power Plant"
       },
       {
         "id": "stag0301",
-        "name": "GekoGeko Land",
-        "area": "Venom Jungle"
+        "name": "GekoGeko Land"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-01.png"
@@ -67,58 +56,47 @@
     "stages": [
       {
         "id": "stag0302",
-        "name": "Mangrove Forest",
-        "area": "Venom Jungle"
+        "name": "Mangrove Forest"
       },
       {
         "id": "stag0303",
-        "name": "Venom Swamp",
-        "area": "Venom Jungle"
+        "name": "Venom Swamp"
       },
       {
         "id": "stag0304",
-        "name": "Dread Note",
-        "area": "Venom Jungle"
+        "name": "Dread Note"
       },
       {
         "id": "stag0401",
-        "name": "Battle Arena",
-        "area": "Machine Pit"
+        "name": "Battle Arena"
       },
       {
         "id": "stag0403",
-        "name": "Mechanical Core",
-        "area": "Machine Pit"
+        "name": "Mechanical Core"
       },
       {
         "id": "stag0404",
-        "name": "Core Area",
-        "area": "Machine Pit"
+        "name": "Core Area"
       },
       {
         "id": "stagBS01",
-        "name": "Apokarimon Space",
-        "area": "Death Valley"
+        "name": "Apokarimon Space"
       },
       {
         "id": "stagBS02",
-        "name": "Demon Shift",
-        "area": "Dry Land"
+        "name": "Demon Shift"
       },
       {
         "id": "stagBS03",
-        "name": "Hades Obelisk",
-        "area": "Venom Jungle"
+        "name": "Hades Obelisk"
       },
       {
         "id": "stagBS04",
-        "name": "Zone X",
-        "area": "Machine Pit"
+        "name": "Zone X"
       },
       {
         "id": "stagBS05",
-        "name": "Zone X",
-        "area": "Machine Pit"
+        "name": "Zone X"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-02.png"
@@ -129,62 +107,51 @@
     "stages": [
       {
         "id": "stagBS06",
-        "name": "Zone X",
-        "area": "Machine Pit"
+        "name": "Zone X"
       },
       {
         "id": "stagGF01",
-        "name": "Guard Room",
-        "area": "Fortress"
+        "name": "Guard Room"
       },
       {
         "id": "stagGF02",
-        "name": "Rotating Hall",
-        "area": "Fortress"
+        "name": "Rotating Hall"
       },
       {
         "id": "stagGF03",
-        "name": "X Digimon Lab",
-        "area": "Fortress"
+        "name": "X Digimon Lab"
       },
       {
         "id": "stagGF04",
-        "name": "GobGob Room",
-        "area": "Fortress"
+        "name": "GobGob Room"
       },
       {
         "id": "stagIS07",
         "name": null,
-        "area": null,
         "description": "Unnamed system scene"
       },
       {
         "id": "stagIS08",
         "name": null,
-        "area": null,
         "description": "Unnamed system scene"
       },
       {
         "id": "stagIS09",
         "name": null,
-        "area": null,
         "description": "Bandai logo"
       },
       {
         "id": "stagIS10",
         "name": null,
-        "area": null,
         "description": "Opening and title"
       },
       {
         "id": "stagIS11",
-        "name": "Main Lobby: Central Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Central Area"
       },
       {
         "id": "stagIS12",
-        "name": "Main Lobby: Central Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Central Area"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-03.png"
@@ -195,59 +162,48 @@
     "stages": [
       {
         "id": "stagIS13",
-        "name": "Main Lobby: Terminal Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Terminal Area"
       },
       {
         "id": "stagIS20",
         "name": null,
-        "area": null,
         "description": "Unnamed system scene"
       },
       {
         "id": "stagML02",
-        "name": "Commander Room",
-        "area": "Home Server"
+        "name": "Commander Room"
       },
       {
         "id": "stagML11",
-        "name": "Main Lobby: Terminal Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Terminal Area"
       },
       {
         "id": "stagML12",
-        "name": "Main Lobby: Central Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Central Area"
       },
       {
         "id": "stagML13",
-        "name": "Main Lobby: Shop Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Shop Area"
       },
       {
         "id": "stagML14",
-        "name": "Main Lobby: Central Area",
-        "area": "Home Server"
+        "name": "Main Lobby: Central Area"
       },
       {
         "id": "dng101b1",
-        "name": "Humid Cave",
-        "area": "Death Valley"
+        "name": "Humid Cave"
       },
       {
         "id": "dng101b2",
-        "name": "Humid Cave",
-        "area": "Death Valley"
+        "name": "Humid Cave"
       },
       {
         "id": "dng102b1",
-        "name": "Cliff Dungeon",
-        "area": "Death Valley"
+        "name": "Cliff Dungeon"
       },
       {
         "id": "dng102b2",
-        "name": "Cliff Dungeon",
-        "area": "Death Valley"
+        "name": "Cliff Dungeon"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-04.png"
@@ -258,58 +214,47 @@
     "stages": [
       {
         "id": "dng102b3",
-        "name": "Cliff Dungeon",
-        "area": "Death Valley"
+        "name": "Cliff Dungeon"
       },
       {
         "id": "dng103f1",
-        "name": "Dome Base",
-        "area": "Death Valley"
+        "name": "Dome Base"
       },
       {
         "id": "dng103f2",
-        "name": "Dome Base",
-        "area": "Death Valley"
+        "name": "Dome Base"
       },
       {
         "id": "dng204b1",
-        "name": "Sand Labyrinth",
-        "area": "Dry Land"
+        "name": "Sand Labyrinth"
       },
       {
         "id": "dng204b2",
-        "name": "Sand Labyrinth",
-        "area": "Dry Land"
+        "name": "Sand Labyrinth"
       },
       {
         "id": "dng205b1",
-        "name": "Ancient Ruins",
-        "area": "Dry Land"
+        "name": "Ancient Ruins"
       },
       {
         "id": "dng205b2",
-        "name": "Ancient Ruins",
-        "area": "Dry Land"
+        "name": "Ancient Ruins"
       },
       {
         "id": "dng205b3",
-        "name": "Ancient Ruins",
-        "area": "Dry Land"
+        "name": "Ancient Ruins"
       },
       {
         "id": "dng206f1",
-        "name": "Virus Lab",
-        "area": "Dry Land"
+        "name": "Virus Lab"
       },
       {
         "id": "dng206f2",
-        "name": "Virus Lab",
-        "area": "Dry Land"
+        "name": "Virus Lab"
       },
       {
         "id": "dng307b1",
-        "name": "Geko Path",
-        "area": "Venom Jungle"
+        "name": "Geko Path"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-05.png"
@@ -320,58 +265,47 @@
     "stages": [
       {
         "id": "dng307b2",
-        "name": "Geko Path",
-        "area": "Venom Jungle"
+        "name": "Geko Path"
       },
       {
         "id": "dng308b1",
-        "name": "Vine Tunnel",
-        "area": "Venom Jungle"
+        "name": "Vine Tunnel"
       },
       {
         "id": "dng308b2",
-        "name": "Vine Tunnel",
-        "area": "Venom Jungle"
+        "name": "Vine Tunnel"
       },
       {
         "id": "dng308b3",
-        "name": "Vine Tunnel",
-        "area": "Venom Jungle"
+        "name": "Vine Tunnel"
       },
       {
         "id": "dng309b1",
-        "name": "Vein",
-        "area": "Venom Jungle"
+        "name": "Vein"
       },
       {
         "id": "dng309b2",
-        "name": "Vein",
-        "area": "Venom Jungle"
+        "name": "Vein"
       },
       {
         "id": "dng309b3",
-        "name": "Vein",
-        "area": "Venom Jungle"
+        "name": "Vein"
       },
       {
         "id": "dng309b4",
-        "name": "Vein",
-        "area": "Venom Jungle"
+        "name": "Vein"
       },
       {
         "id": "dng310f1",
-        "name": "Dread Bridge",
-        "area": "Venom Jungle"
+        "name": "Dread Bridge"
       },
       {
         "id": "dng310f2",
-        "name": "Dread Bridge",
-        "area": "Venom Jungle"
+        "name": "Dread Bridge"
       },
       {
         "id": "dng310f3",
-        "name": "Dread Bridge",
-        "area": "Venom Jungle"
+        "name": "Dread Bridge"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-06.png"
@@ -382,58 +316,47 @@
     "stages": [
       {
         "id": "dng411b1",
-        "name": "Mecha Nest",
-        "area": "Machine Pit"
+        "name": "Mecha Nest"
       },
       {
         "id": "dng411b2",
-        "name": "Mecha Nest",
-        "area": "Machine Pit"
+        "name": "Mecha Nest"
       },
       {
         "id": "dng411b3",
-        "name": "Mecha Nest",
-        "area": "Machine Pit"
+        "name": "Mecha Nest"
       },
       {
         "id": "dng412b1",
-        "name": "Electro Mine",
-        "area": "Machine Pit"
+        "name": "Electro Mine"
       },
       {
         "id": "dng412b2",
-        "name": "Electro Mine",
-        "area": "Machine Pit"
+        "name": "Electro Mine"
       },
       {
         "id": "dng412b3",
-        "name": "Electro Mine",
-        "area": "Machine Pit"
+        "name": "Electro Mine"
       },
       {
         "id": "dng412b4",
-        "name": "Electro Mine",
-        "area": "Machine Pit"
+        "name": "Electro Mine"
       },
       {
         "id": "dngq1b1e",
-        "name": "Barbarian Cave",
-        "area": "Machine Pit"
+        "name": "Barbarian Cave"
       },
       {
         "id": "dngq1b2e",
-        "name": "Barbarian Cave",
-        "area": "Machine Pit"
+        "name": "Barbarian Cave"
       },
       {
         "id": "dngq2b1e",
-        "name": "Undead Yard",
-        "area": "Machine Pit"
+        "name": "Undead Yard"
       },
       {
         "id": "dngq2b2e",
-        "name": "Undead Yard",
-        "area": "Machine Pit"
+        "name": "Undead Yard"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-07.png"
@@ -444,58 +367,47 @@
     "stages": [
       {
         "id": "dngq2b2h",
-        "name": "Undead Yard",
-        "area": "Machine Pit"
+        "name": "Undead Yard"
       },
       {
         "id": "dngq3b1e",
-        "name": "Forbidden Shrine",
-        "area": "Machine Pit"
+        "name": "Forbidden Shrine"
       },
       {
         "id": "dngq3b2e",
-        "name": "Forbidden Shrine",
-        "area": "Machine Pit"
+        "name": "Forbidden Shrine"
       },
       {
         "id": "dngq4b1e",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq4b1h",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq4b1v",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq4b2e",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq4b2h",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq4b2v",
-        "name": "Captive Dungeon",
-        "area": "Machine Pit"
+        "name": "Captive Dungeon"
       },
       {
         "id": "dngq5b1e",
-        "name": "Trader Hall",
-        "area": "Machine Pit"
+        "name": "Trader Hall"
       },
       {
         "id": "dngq5b1h",
-        "name": "Trader Hall",
-        "area": "Machine Pit"
+        "name": "Trader Hall"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-08.png"
@@ -506,48 +418,39 @@
     "stages": [
       {
         "id": "dngq5b1v",
-        "name": "Trader Hall",
-        "area": "Machine Pit"
+        "name": "Trader Hall"
       },
       {
         "id": "dngq6b01",
-        "name": "Dungeon of Doom",
-        "area": "Machine Pit"
+        "name": "Dungeon of Doom"
       },
       {
         "id": "dngq7b1e",
-        "name": "Item Road",
-        "area": "Machine Pit"
+        "name": "Item Road"
       },
       {
         "id": "dngq7b2e",
-        "name": "Item Road",
-        "area": "Machine Pit"
+        "name": "Item Road"
       },
       {
         "id": "dngq8b1e",
-        "name": "Cursed Dungeon",
-        "area": "Machine Pit"
+        "name": "Cursed Dungeon"
       },
       {
         "id": "dngq8b2e",
-        "name": "Cursed Dungeon",
-        "area": "Machine Pit"
+        "name": "Cursed Dungeon"
       },
       {
         "id": "dngq8b3e",
-        "name": "Cursed Dungeon",
-        "area": "Machine Pit"
+        "name": "Cursed Dungeon"
       },
       {
         "id": "dngq8b3h",
-        "name": "Cursed Dungeon",
-        "area": "Machine Pit"
+        "name": "Cursed Dungeon"
       },
       {
         "id": "dngq8b3v",
-        "name": "Cursed Dungeon",
-        "area": "Machine Pit"
+        "name": "Cursed Dungeon"
       }
     ],
     "screenshot": "assets/images/translated/digi-elf-2/screen-09.png"

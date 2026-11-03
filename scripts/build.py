@@ -57,16 +57,15 @@ def make_renderer():
 
 
 def stage_markup(pages):
-    markup = ['<div class="stage-search"><label for="stage-query">Filter by stage name, area or ID</label><input id="stage-query" type="search" placeholder="Try Goblin Pass, Death Valley or stagGF" autocomplete="off" aria-describedby="stage-count"><p id="stage-count" role="status" aria-live="polite">97 of 97 destinations</p><noscript><p>The complete list is available below. Filtering requires JavaScript.</p></noscript></div><p id="stage-empty" hidden>No matching destinations. Try a shorter name or stage ID.</p><div class="stage-screens">']
+    markup = ['<div class="stage-search"><label for="stage-query">Filter by stage name or ID</label><input id="stage-query" type="search" placeholder="Try Goblin Pass or stagGF" autocomplete="off" aria-describedby="stage-count"><p id="stage-count" role="status" aria-live="polite">97 of 97 destinations</p><noscript><p>The complete list is available below. Filtering requires JavaScript.</p></noscript></div><p id="stage-empty" hidden>No matching destinations. Try a shorter name or stage ID.</p><div class="stage-screens">']
     for page in pages:
         number = page['screen']
         markup.append(f'<section class="stage-screen" aria-labelledby="screen-{number}"><h3 id="screen-{number}">Screen {number:02d}</h3><p class="stage-script">{escape(page["script"])}</p><ol>')
         for row, stage in enumerate(page['stages'], 1):
             stage_id = stage['id']
             name = stage['name'] or stage['description']
-            area = stage['area'] or 'No location banner'
-            search = ' '.join((stage_id, name, area))
-            markup.append(f'<li value="{row}" data-stage="{escape(stage_id)}" data-search="{escape(search, quote=True)}"><code id="{escape(stage_id)}">{escape(stage_id)}</code><span class="stage-name">{escape(name)}</span><span class="stage-area">{escape(area)}</span></li>')
+            search = ' '.join((stage_id, name))
+            markup.append(f'<li value="{row}" data-stage="{escape(stage_id)}" data-search="{escape(search, quote=True)}"><span class="stage-label"><code id="{escape(stage_id)}">{escape(stage_id)}</code><span class="stage-separator" aria-hidden="true">|</span><span class="stage-name">{escape(name)}</span></span></li>')
         markup.append(f'</ol><p style="margin:1rem 0 0;font-size:.75rem"><a href="{escape(page["screenshot"])}">View screen {number} screenshot →</a></p></section>')
     markup.append('</div>')
     return ''.join(markup)

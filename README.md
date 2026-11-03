@@ -10,7 +10,7 @@ The access guide includes a standalone Python patcher that automatically detects
 
 ## Edit the documentation
 
-Edit the Markdown files in `content/` using GitHub’s file editor, then commit to `main`. The Publish website workflow builds, checks and deploys the site automatically. Edit `content/stages.json` for destination data; the published list and downloadable JSON are generated from the same file. Each destination records its ID, English location name and area. System scenes without a named location have a null name and a scene description. The list can be filtered by name, area or ID.
+Edit the Markdown files in `content/` using GitHub’s file editor, then commit to `main`. The Publish website workflow builds, checks and deploys the site automatically. Edit `content/stages.json` for destination data; the published list and downloadable JSON are generated from the same file. Each destination records its ID and English stage name. System scenes without a named location have a null name and a scene description. The list can be filtered by name or ID.
 
 Images live in `assets/images/`. The gallery is built from the annotated PNGs under `assets/images/translated/`. Digi-Elf 2’s dialogue and nine unique stage-select screens appear together in its section. Its `screen-01.png` through `screen-09.png` filenames follow the menu order recorded in `content/stages.json`.
 
