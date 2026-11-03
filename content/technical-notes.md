@@ -2,7 +2,7 @@
 
 `stag0000` is included in the USA, European and Japanese PS2 releases, and the USA and Japanese GameCube and Xbox releases. In each of these versions, its stage manifest is **NDMW.AFS entry 137**, and the manifest loads its scene and debug scripts from **entry 603**.
 
-Each version contains the same nine-screen stage-select list with 97 entries. The visible environment, floor collision, boundary collision, background and fog settings also match across the three PS2 releases.
+Each version contains the same nine-screen stage-select list with 97 entries. Across PS2, GameCube and Xbox, the developer stage uses the practice stage’s environment layout, with different NPCs and objects.
 
 ## NPC visibility and flag 960
 
@@ -18,21 +18,6 @@ Normal character data starts with flag 960 set. Redirecting that login into `sta
 The Japanese PS2, GameCube and Xbox releases do not have these two flag checks in the developer stage startup script. They spawn the full roster regardless of flag 960.
 
 This behaviour comes from the stage’s startup script: one check surrounds Leomon and the other five Digi-Elves, and the other surrounds the two Goblimon. The stage-select Digi-Elf and the rocks are outside both checks.
-
-## Shared practice-stage environment
-
-The developer stage (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects differ between the stages.
-
-| Environment data | Comparison |
-| --- | --- |
-| Visible background | Same 33-node scene, 12 geometry nodes and 3,219 vertices; positions, normals, UVs and triangle indices match |
-| Floor collision | Same two geometry nodes and 42 vertices |
-| Main boundary collision (`0x802`) | Same geometry and transforms |
-| Kind-4 collision graph | Same geometry and transforms |
-| Background and fog colour | Both store RGBA `(0.8, 0.7, 0.8, 1.0)`, giving the void a slight mauve tint |
-| Additional practice-stage wall | The practice stage has one extra kind-2 collision graph; the developer stage does not |
-
-The shared visible layout does not mean that every object, interaction or collision rule is the same.
 
 ## Stage transitions
 
