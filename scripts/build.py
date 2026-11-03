@@ -105,7 +105,7 @@ def main():
         navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'><span aria-hidden="true">{i:02d}</span>{escape(l)}</a>' for i, (s, l, _, _) in enumerate(PAGES, 1))
         header = f'<header class="page-header"><p class="page-eyebrow">Dev world / {page_index + 1:02d}</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
         if slug == 'index':
-            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p><dl class="facts"><div><dt>Destinations</dt><dd>97</dd></div><div><dt>Menu screens</dt><dd>9</dd></div><div><dt>Captures</dt><dd>90</dd></div></dl></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage: a green grid over a pink void, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
+            header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage: a green grid over a grey void, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
         footer_links = []
         if page_index:
             previous = PAGES[page_index - 1]

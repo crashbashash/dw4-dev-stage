@@ -1,4 +1,4 @@
-`stag0000` is a hidden developer stage included in the USA PlayStation 2 release of **Digimon World 4**. A green grid hangs over a pink void, and the characters standing on it expose a collection of debug tools.
+`stag0000` is a hidden developer stage included in the USA PlayStation 2 release of **Digimon World 4**. A green grid hangs over a grey void, and the characters standing on it expose a collection of debug tools.
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
