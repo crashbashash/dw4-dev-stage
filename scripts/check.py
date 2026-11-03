@@ -82,7 +82,7 @@ def main():
             elif parts.fragment and target in pages and unquote(parts.fragment) not in pages[target].ids:
                 errors.append(f'{file.name}: missing anchor {link}')
     destinations = json.loads((ROOT / 'content/stages.json').read_text())
-    expected = [stage for page in destinations for stage in page['stages']]
+    expected = [stage['id'] for page in destinations for stage in page['stages']]
     actual = pages[(OUT / 'stage-select.html').resolve()].stages
     if actual != expected or len(actual) != 97 or len(set(actual)) != 97:
         errors.append('Stage reference does not match the 97 unique destinations in source order')

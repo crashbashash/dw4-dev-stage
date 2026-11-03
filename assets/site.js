@@ -8,7 +8,7 @@ if (search) {
     const query = search.value.trim().toLowerCase();
     let visible = 0;
     for (const row of rows) {
-      row.hidden = !row.dataset.stage.toLowerCase().includes(query);
+      row.hidden = !row.dataset.search.toLowerCase().includes(query);
       if (!row.hidden) visible += 1;
     }
     for (const screen of screens) {

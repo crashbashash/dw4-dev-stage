@@ -8,6 +8,8 @@ The nine menu scripts in **AFS entry 603** define this list. Every listed destin
 
 ## Find a destination
 
+Each entry pairs its stage ID with the English location name and area shown in-game. Floors and variants can share a name; their IDs remain distinct. System scenes without a location banner use descriptive labels.
+
 [[STAGES]]
 
 [View Digi-Elf 2’s dialogue and nine menu screenshots →](gallery.html#digi-elf-2)
