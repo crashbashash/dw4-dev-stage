@@ -4,7 +4,19 @@ The developer stage is present on **PlayStation 2, GameCube and Xbox**, but ther
 
 The patcher automatically detects the **platform and region**, then changes the character-selection transition so that it requests **`stag0000` instead of the Main Lobby**. It creates a separate image and leaves your original file unchanged.
 
-1. Have a supported image of Digimon World 4 (Digimon World X in Japan) and **Python 3.11 or newer**.
+**Requirements:** Python 3.11 or newer, with no additional Python packages, and a supported game image:
+
+| Platform | Releases supported | Input formats |
+| --- | --- | --- |
+| PlayStation 2 | USA · Europe · Japan | ISO |
+| GameCube | USA · Japan | ISO/GCM · CISO |
+| Xbox | USA · Japan | Game-partition XISO |
+
+**Convert first:** RVZ, GCZ, WIA and NKit images must be converted to plain GameCube ISO/GCM before using the patcher. GameCube CISO input is supported and expanded to a plain ISO.
+
+You also need valid saved character data for the normal character-selection route.
+
+1. Have an image of Digimon World 4 (Digimon World X in Japan) in one of the supported formats above.
 2. [Download the Developer Stage patcher](assets/tools/patch_dev_stage.py) and put it beside your ISO.
 3. Open a terminal in that folder and run:
 
@@ -18,14 +30,6 @@ python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --output "Digimon World 4
 Start by booting the patched image; loading an existing savestate in another area bypasses the changed character-selection transition. If “Call Digimon” reports no game file, you need valid saved character data to continue through that route.
 
 Use your own image’s filename in the command above. No platform or region flags are needed; detection uses the disc’s contents rather than its filename.
-
-| Platform | Releases supported | Input formats |
-| --- | --- | --- |
-| PlayStation 2 | USA · Europe · Japan | ISO |
-| GameCube | USA · Japan | ISO/GCM · CISO |
-| Xbox | USA · Japan | Game-partition XISO |
-
-GameCube CISO input is expanded to a plain ISO. Convert NKit, RVZ, GCZ or WIA images to plain ISO/GCM before using the patcher.
 
 The patcher recognises the retail developer-stage and login packs and boot executable, and refuses altered patch targets or existing output files. To show the detected platform, region and patch plan without creating a new image:
 
