@@ -2,7 +2,7 @@
 
 The stage has no known route through ordinary gameplay. Once inside, you can speak to its Digi-Elves, select stages, change debug settings, unlock Digivolutions, or use the item and money cheats.
 
-**[Access the dev world →](access.html#create-a-dev-world-iso)**
+**[Access the developer stage →](access.html#create-a-developer-stage-iso)**
 
 ## A debug menu you can walk around
 
@@ -23,10 +23,10 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 
 [Read the NPC menus and translations →](debug-npcs.html)
 
-## Explore the dev world
+## Explore the developer stage
 
 - **[Stage select](stage-select.html):** the complete destination list in script order, with screen and row numbers.
-- **[Access and controls](access.html):** how to enter the dev world and use the stage-select menu.
+- **[Access and controls](access.html):** how to enter the developer stage and use the stage-select menu.
 - **[Screenshot gallery](gallery.html):** translated dialogue and menus, grouped by NPC. Digi-Elf 2’s section includes each stage-select screen once, in menu order.
 - **[Technical notes](technical-notes.html):** script references, entry positions, and functions that still need documenting.
 
@@ -38,6 +38,6 @@ Six Digi-Elves share the same on-screen name, デジルフ. Each has a different
 | GameCube | USA · Japan | `stag0000` |
 | Xbox | USA · Japan | `stag0000` |
 
-The listed releases contain the same nine-screen stage-select list. The [ISO patcher](access.html#create-a-dev-world-iso) supports the USA, European and Japanese PS2 images.
+The listed releases contain the same nine-screen stage-select list. The [ISO patcher](access.html#create-a-developer-stage-iso) automatically detects the platform and region and supports all the releases listed above.
 
-Screenshots use a modified character with high stats. Entering the dev world does not itself grant those stats. English panels are annotations added to the screenshots; the in-game debug dialogue is Japanese.
+Screenshots use a modified character with high stats. Entering the developer stage does not itself grant those stats. English panels are annotations added to the screenshots; the in-game debug dialogue is Japanese.

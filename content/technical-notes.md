@@ -4,9 +4,24 @@
 
 Each version contains the same nine-screen stage-select list with 97 entries. The visible environment, floor collision, boundary collision, background and fog settings also match across the three PS2 releases.
 
+## NPC visibility and flag 960
+
+The **USA PS2, USA GameCube, USA Xbox and European PS2 releases** condition most of the developer stage’s NPC spawns on **flag 960 being clear**.
+
+| Flag 960 | Characters and objects spawned |
+| --- | --- |
+| Clear (`0`) | All six Digi-Elves, Leomon, both Goblimon and both cheat rocks |
+| Set (`1`) | The stage-select Digi-Elf and both cheat rocks |
+
+Normal character data starts with flag 960 set. Redirecting that login into `stag0000` can therefore produce a partly populated developer stage even though all of the NPC data is present.
+
+The Japanese PS2, GameCube and Xbox releases do not have these two flag checks in the developer stage startup script. They spawn the full roster regardless of flag 960.
+
+This behaviour comes from the stage’s startup script: one check surrounds Leomon and the other five Digi-Elves, and the other surrounds the two Goblimon. The stage-select Digi-Elf and the rocks are outside both checks.
+
 ## Shared practice-stage environment
 
-The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects differ between the stages.
+The developer stage (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, entry 607) use the same visible environment layout. Their `BG02` background scenes have matching hierarchy, mesh data and world transforms. NPCs, enemies and separately placed objects differ between the stages.
 
 | Environment data | Comparison |
 | --- | --- |
@@ -15,7 +30,7 @@ The dev world (`stag0000`, NDMW.AFS entry 603) and practice stage (`stag0001`, e
 | Main boundary collision (`0x802`) | Same geometry and transforms |
 | Kind-4 collision graph | Same geometry and transforms |
 | Background and fog colour | Both store RGBA `(0.8, 0.7, 0.8, 1.0)`, giving the void a slight mauve tint |
-| Additional practice-stage wall | The practice stage has one extra kind-2 collision graph; the dev world does not |
+| Additional practice-stage wall | The practice stage has one extra kind-2 collision graph; the developer stage does not |
 
 The shared visible layout does not mean that every object, interaction or collision rule is the same.
 
@@ -29,15 +44,13 @@ The complete destination data is available as [JSON](assets/data/stages.json).
 
 ## Character-selection patch
 
-The [access patcher](assets/tools/patch_dev_world.py) replaces the eight-byte string `stagML11` with `stag0000` in three character-selection packs. It identifies the USA, European or Japanese image by size and MD5, then applies that release’s offsets to a separate copy.
+The [access patcher](assets/tools/patch_dev_stage.py) detects the platform from the disc filesystem, then identifies the region using SHA-256 fingerprints of the developer-stage, login packs and boot executable.
 
-| Region | AFS entry 808 | AFS entry 810 | AFS entry 812 |
-| --- | --- | --- | --- |
-| USA | `0x471DB773` | `0x4722B38B` | `0x4730C52F` |
-| Europe | `0x469B7B6B` | `0x46A35867` | `0x46AC745F` |
-| Japan | `0x471C7957` | `0x47240177` | `0x473A3AD3` |
+It changes the native login controller’s `stagML11` destination to `stag0000`. The destination is in the PS2 ELF, GameCube DOL or Xbox XBE. Xbox outputs also receive an updated section digest for the changed executable data.
 
-Each entry replaces `stagML11` with `stag0000`. The fixed-length replacements preserve the pack sizes and ISO layout, changing twelve bytes in total. The offsets apply to the original images listed in the [access guide](access.html).
+For USA PS2, USA GameCube, USA Xbox and European PS2, the patcher makes the two developer stage NPC-spawn blocks unconditional. It replaces each flag-960 comparison branch with a Lua `POP 2` instruction, preserving the stack effect and instruction count. The full roster then appears without changing flag 960 or any other saved progression flag. Japanese startup scripts already spawn the full roster and need no visibility change.
+
+The patch leaves the stage-select destinations and Leomon’s scripted return to the Main Lobby intact. Its output keeps the existing logical disc layout; GameCube CISO input is expanded into a plain ISO. See the [access guide](access.html) for supported releases and formats.
 
 ## Unlocks and cheats
 
@@ -53,10 +66,10 @@ Each entry replaces `stagML11` with `stag0000`. The fixed-length replacements pr
 - **TIME00–TIME06 and Field Quest:** the menu names are visible, but their gameplay effects and the code that reads the values still need tracing.
 - **NORMAL / MINIMUM:** the text-size choices are visible, but the affected text consumers are not yet identified.
 - **Play mode:** the menu offers Hard and Very Hard; the exact storage variable and its relationship to normal difficulty selection still need documenting.
-- **Other routes into the dev world:** a `NEXTSTAGE "stag0000"` reference outside the stage-select list has been reported; its context and reachability need establishing.
+- **Other routes into the developer stage:** a `NEXTSTAGE "stag0000"` reference outside the stage-select list has been reported; its context and reachability need establishing.
 
 ## Corrections and contributions
 
 [Open an issue](https://github.com/crashbashash/dw4-dev-world/issues) to suggest a correction or supply additional information. A screenshot, exact game version, or script reference helps document the behaviour precisely.
 
-Game names, dialogue and screenshots belong to their respective rights holders. This is an unofficial guide to the dev world.
+Game names, dialogue and screenshots belong to their respective rights holders. This is an unofficial guide to the developer stage.

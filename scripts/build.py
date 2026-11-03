@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the developer-world reference from Markdown and destination data."""
+"""Build the developer-stage reference from Markdown and destination data."""
 from html import escape
 from pathlib import Path
 from string import Template
@@ -14,11 +14,11 @@ OUT = ROOT / 'dist'
 URL = 'https://crashbashash.github.io/dw4-dev-world/'
 REPO = 'https://github.com/crashbashash/dw4-dev-world'
 PAGES = [
-    ('index', 'Overview', 'The developer world.', 'A hidden debug sandbox inside Digimon World 4.'),
+    ('index', 'Overview', 'Developer Stage', 'A hidden debug sandbox inside Digimon World 4.'),
     ('debug-npcs', 'Debug NPCs', 'The debug NPCs', 'Characters, menu options and English translations.'),
-    ('stage-select', 'Stage select', '97 places to go.', 'The complete developer stage-select list, in script order.'),
-    ('access', 'Access & controls', 'Getting there.', 'How to access the dev world and use its menus.'),
-    ('gallery', 'Screenshot gallery', 'The screenshot gallery.', 'The dev world’s Japanese dialogue and menus, with English annotations.'),
+    ('stage-select', 'Stage select', 'Stage select', 'The complete developer stage-select list, in script order.'),
+    ('access', 'Access & controls', 'Getting there.', 'How to access the developer stage and use its menus.'),
+    ('gallery', 'Screenshot gallery', 'The screenshot gallery.', 'The developer stage’s Japanese dialogue and menus, with English annotations.'),
     ('technical-notes', 'Technical notes', 'Under the surface.', 'Stage transitions, cheat scripts and functions that need more documentation.'),
 ]
 GROUPS = [
@@ -109,7 +109,9 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True)
+    shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '*.pyo'))
+    # Preserve the original download URL while the canonical name follows the site title.
+    shutil.copyfile(OUT / 'assets/tools/patch_dev_stage.py', OUT / 'assets/tools/patch_dev_world.py')
     pages = json.loads((ROOT / 'content/stages.json').read_text())
     assert [len(p['stages']) for p in pages] == [11] * 8 + [9]
     assert len({stage for page in pages for stage in page['stages']}) == 97
@@ -122,7 +124,7 @@ def main():
         body = body.replace('<p>[[GALLERY]]</p>', gallery_markup())
         body = body.replace('<table>', '<div class="table-scroll" role="region" aria-label="Reference table" tabindex="0"><table>').replace('</table>', '</table></div>')
         navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'><span aria-hidden="true">{i:02d}</span>{escape(l)}</a>' for i, (s, l, _, _) in enumerate(PAGES, 1))
-        header = f'<header class="page-header"><p class="page-eyebrow">Dev world / {page_index + 1:02d}</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
+        header = f'<header class="page-header"><p class="page-eyebrow">Developer stage / {page_index + 1:02d}</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
         if slug == 'index':
             header = f'<header class="page-header home-header"><div><p class="page-eyebrow">Digimon World 4 / stag0000</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></div><figure class="overview-figure"><img src="assets/images/dev-world.png" width="640" height="478" alt="The developer stage uses the practice stage’s grid platform and background, with Digi-Elves, Leomon and debug objects."><figcaption>STAG0000 · THE DEVELOPER STAGE</figcaption></figure></header>'
         footer_links = []

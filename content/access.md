@@ -1,52 +1,54 @@
-The developer stage is present on **PlayStation 2, GameCube and Xbox**, but there is no known route through ordinary gameplay. You can reach it with a compatible dev-world savestate or by redirecting a stage transition to `stag0000`.
+The developer stage is present on **PlayStation 2, GameCube and Xbox**, but there is no known route through ordinary gameplay. You can reach it with a compatible developer-stage savestate or by redirecting a stage transition to `stag0000`.
 
-## Create a dev-world ISO
+## Create a developer-stage ISO
 
-The included **PS2 patcher** changes the character-selection transition so that it requests **`stag0000` instead of the Main Lobby**. It creates a separate ISO and leaves your original file unchanged.
+The patcher automatically detects the **platform and region**, then changes the character-selection transition so that it requests **`stag0000` instead of the Main Lobby**. It creates a separate image and leaves your original file unchanged.
 
-1. Have an original **USA, European or Japanese PS2** image of Digimon World 4 (Digimon World X in Japan) and **Python 3.11 or newer**.
-2. [Download the dev-world patcher](assets/tools/patch_dev_world.py) and put it beside your ISO.
+1. Have a supported image of Digimon World 4 (Digimon World X in Japan) and **Python 3.11 or newer**.
+2. [Download the Developer Stage patcher](assets/tools/patch_dev_stage.py) and put it beside your ISO.
 3. Open a terminal in that folder and run:
 
 ```sh
-python3 patch_dev_world.py "Digimon World 4 (USA).iso" --output "Digimon World 4 - Dev World.iso"
+python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --output "Digimon World 4 - Developer Stage.iso"
 ```
 
-4. Boot **Digimon World 4 - Dev World.iso** in PCSX2.
-5. Load your Digimon and finish normal character selection. The transition that normally takes you to the Main Lobby now targets the developer world.
+4. Open **Digimon World 4 - Developer Stage.iso** in the emulator for that platform.
+5. Load your Digimon and finish normal character selection. The transition that normally takes you to the Main Lobby now targets the developer stage.
 
 Start by booting the patched image; loading an existing savestate in another area bypasses the changed character-selection transition. If “Call Digimon” reports no game file, you need valid saved character data to continue through that route.
 
-Use your own ISO’s filename in the command above. The patcher detects the region automatically and uses the corresponding offsets.
+Use your own image’s filename in the command above. No platform or region flags are needed; detection uses the disc’s contents rather than its filename.
 
-| Region | Game ID | Original ISO MD5 |
+| Platform | Releases supported | Input formats |
 | --- | --- | --- |
-| USA | `SLUS-20836` | `3185f04230b1dabd853db750e4b51108` |
-| Europe | `SLES-53405` | `bd95f00a8efa2ab6b502b7aade37f143` |
-| Japan | `SLPS-25453` | `78543a26a08d82fb32f1f3b5035d7e3b` |
+| PlayStation 2 | USA · Europe · Japan | ISO |
+| GameCube | USA · Japan | ISO/GCM · CISO |
+| Xbox | USA · Japan | Game-partition XISO |
 
-It refuses unsupported or modified images and existing output files. To check compatibility without creating a new image:
+GameCube CISO input is expanded to a plain ISO. Convert NKit, RVZ, GCZ or WIA images to plain ISO/GCM before using the patcher.
+
+The patcher recognises the retail developer-stage and login packs and boot executable, and refuses altered patch targets or existing output files. To show the detected platform, region and patch plan without creating a new image:
 
 ```sh
-python3 patch_dev_world.py "Digimon World 4 (USA).iso" --check
+python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --check
 ```
 
-The patch changes three same-length stage names in AFS entries **808, 810 and 812**.
+The patch redirects the native login destination and enables the full NPC roster in releases where flag 960 would hide it. Saved progression flags are unchanged. [NPC visibility details →](technical-notes.html#npc-visibility-and-flag-960)
 
 ## Access methods
 
 | Method | How it works | What you need |
 | --- | --- | --- |
-| Developer-world savestate | Restore a state already inside `stag0000` | A compatible PCSX2 dev-world state, supplied separately |
+| Developer Stage savestate | Restore a state already inside `stag0000` | A developer-stage state compatible with your emulator, supplied separately |
 | NPC-specific savestate | Restore a state standing in front of a particular debug NPC | A compatible state; `digi-elf-2` starts at the stage-select NPC |
 | Redirect a stage transition in RAM | Change the stage-name pointer in an existing gate transition record, then confirm the gate | Requires identifying the live command record and a valid stage-name string; addresses can depend on the loaded state |
-| Patch the character-select transition | Use the patcher above to replace the Main Lobby destination with `stag0000` | An original USA, European or Japanese PS2 ISO, Python, and saved character data for the normal login route |
+| Patch the character-select transition | Use the patcher above to replace the Main Lobby destination with `stag0000` | A supported disc image, Python, and saved character data for the normal login route |
 
 Savestates and patched game images are not included with this guide.
 
 ## Using the stage-select NPC
 
-Start inside the developer world, facing the Digi-Elf identified as **Digi-Elf 2**. The controls below use PS2 button names.
+Start inside the developer stage, facing the Digi-Elf identified as **Digi-Elf 2**. The controls below use PS2 button names.
 
 1. Press **Cross** to talk, advance the introduction, and confirm the highlighted **とびます!とびます! / I’ll warp!** choice. Three Cross presses open the first stage-list screen.
 2. The cursor starts on **つぎのページ / Next page**. Confirm that line to advance a screen.

@@ -1,4 +1,4 @@
-# Digimon World 4 — Developer World
+# Digimon World 4 — Developer Stage
 
 A guide to `stag0000`, the hidden developer stage included in the PlayStation 2, GameCube and Xbox versions of Digimon World 4 (Digimon World X in Japan), its debug tools and how to access it.
 
@@ -6,7 +6,7 @@ A guide to `stag0000`, the hidden developer stage included in the PlayStation 2,
 
 Includes the NPC menus and English translations, access notes, 97 stage-select entries in script order, annotated screenshots, and technical notes on the shared practice-stage environment.
 
-The access guide includes a standalone Python patcher that detects original USA (`SLUS-20836`), European (`SLES-53405`) and Japanese (`SLPS-25453`) images and creates a separate dev-world ISO. It contains no game data and changes only three fixed-length destination strings.
+The access guide includes a standalone Python patcher that automatically detects PS2 (USA, Europe, Japan), GameCube (USA, Japan) and Xbox (USA, Japan) images and creates a separate developer-stage ISO. It supports PS2 ISO, GameCube ISO/GCM and CISO, and Xbox game-partition XISO. CISO input becomes a plain ISO. It contains no game data. It redirects the native login controller and enables the full developer stage NPC roster without changing saved progression flags.
 
 ## Edit the documentation
 
