@@ -14,8 +14,6 @@ The patcher automatically detects the **platform and region**, then changes the 
 
 **Convert first:** RVZ, GCZ, WIA and NKit images must be converted to plain GameCube ISO/GCM before using the patcher. GameCube CISO input is supported and expanded to a plain ISO.
 
-You also need valid saved character data for the normal character-selection route.
-
 1. Have an image of Digimon World 4 (Digimon World X in Japan) in one of the supported formats above.
 2. [Download the Developer Stage patcher](assets/tools/patch_dev_stage.py) and put it beside your ISO.
 3. Open a terminal in that folder and run:
@@ -25,7 +23,7 @@ python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --output "Digimon World 4
 ```
 
 4. Open **Digimon World 4 - Developer Stage.iso** in the emulator for that platform.
-5. Load your Digimon and finish normal character selection. The transition that normally takes you to the Main Lobby now targets the developer stage.
+5. Either create or call a Digimon to enter the developer stage.
 
 Use your own image’s filename in the command above. No platform or region flags are needed; detection uses the disc’s contents rather than its filename.
 
@@ -44,7 +42,7 @@ The patch redirects the native login destination and enables the full NPC roster
 | Developer Stage savestate | Restore a state already inside `stag0000` | A developer-stage state compatible with your emulator, supplied separately |
 | NPC-specific savestate | Restore a state standing in front of a particular debug NPC | A compatible state; `digi-elf-2` starts at the stage-select NPC |
 | Redirect a stage transition in RAM | Change the stage-name pointer in an existing gate transition record, then confirm the gate | Requires identifying the live command record and a valid stage-name string; addresses can depend on the loaded state |
-| Patch the character-select transition | Use the patcher above to replace the Main Lobby destination with `stag0000` | A supported disc image, Python, and saved character data for the normal login route |
+| Patch the character-select transition | Use the patcher above to replace the Main Lobby destination with `stag0000` | A supported disc image and Python |
 
 Savestates and patched game images are not included with this guide.
 
