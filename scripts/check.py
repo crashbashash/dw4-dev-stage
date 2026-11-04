@@ -24,9 +24,16 @@ class Page(HTMLParser):
         self.in_main = False
         self.main = False
         self.title = False
+        self.guide_nav = False
+        self.guide_list_depth = 0
+        self.guide_links = []
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
+        if tag == 'nav' and attrs.get('aria-label') == 'Guide sections':
+            self.guide_nav = True
+        if tag == 'ul' and self.guide_nav:
+            self.guide_list_depth += 1
         if 'id' in attrs:
             self.ids.append(attrs['id'])
         if tag == 'h1':
@@ -37,6 +44,8 @@ class Page(HTMLParser):
             self.title = True
         if tag == 'a':
             self.links.append(attrs.get('href', ''))
+            if self.guide_nav:
+                self.guide_links.append((attrs, self.guide_list_depth))
         if tag in {'script', 'img'}:
             self.links.append(attrs.get('src', ''))
         if tag == 'link' and attrs.get('rel') in {'stylesheet', 'icon'}:
@@ -45,6 +54,12 @@ class Page(HTMLParser):
             self.images.append(attrs)
         if 'data-stage' in attrs:
             self.stages.append(attrs['data-stage'])
+
+    def handle_endtag(self, tag):
+        if tag == 'ul' and self.guide_nav:
+            self.guide_list_depth -= 1
+        if tag == 'nav':
+            self.guide_nav = False
 
 
 def main():
@@ -57,6 +72,13 @@ def main():
         pages[file.resolve()] = page
         if page.headings != 1 or not page.main or not page.title:
             errors.append(f'{file.name}: needs one h1, a main landmark and a title')
+        current = [attrs.get('href') for attrs, _ in page.guide_links if attrs.get('aria-current') == 'page']
+        if current != [file.name]:
+            errors.append(f'{file.name}: navigation must mark only the current page')
+        guide_targets = [attrs.get('href') for attrs, _ in page.guide_links]
+        patcher_links = [depth for attrs, depth in page.guide_links if attrs.get('href') == 'patcher.html']
+        if patcher_links != [2] or 'access.html' not in guide_targets or guide_targets.index('patcher.html') != guide_targets.index('access.html') + 1:
+            errors.append(f'{file.name}: patcher guide must be nested immediately under Access')
         duplicates = [key for key, count in Counter(page.ids).items() if count > 1]
         if duplicates:
             errors.append(f'{file.name}: duplicate IDs {duplicates}')
@@ -65,8 +87,9 @@ def main():
                 errors.append(f'{file.name}: image needs alt text: {image.get("src")}')
         if re.search(r'\[\[[A-Z]+\]\]|/home/|/Users/|file://|\bsurvey\b|\b20\d\d\b', text, re.I):
             errors.append(f'{file.name}: unresolved marker, local path or unwanted dated/survey wording')
-    if len(pages) != 6:
-        errors.append(f'Expected 6 pages, got {len(pages)}')
+    expected_pages = {file.stem + '.html' for file in (ROOT / 'content').glob('*.md')}
+    if {file.name for file in pages} != expected_pages:
+        errors.append('Built pages must match the Markdown pages in content/')
     link_count = 0
     for file, page in pages.items():
         for link in page.links:

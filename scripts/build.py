@@ -18,9 +18,11 @@ PAGES = [
     ('debug-npcs', 'Debug NPCs', 'Debug NPCs', 'Characters, menu options, controls and English translations.'),
     ('stage-select', 'Stage select', 'Stage select', 'The complete developer stage-select list, in script order.'),
     ('access', 'Access', 'Access', 'How to access the developer stage.'),
+    ('patcher', 'How the patcher works', 'How the patcher works', 'Disc detection, executable changes, NPC visibility and output checks.'),
     ('gallery', 'Screenshot gallery', 'Screenshot gallery', 'The developer stage’s Japanese dialogue and menus, with English annotations.'),
     ('technical-notes', 'Technical notes', 'Technical notes', 'Stage data, progression presets and debug-script behaviour.'),
 ]
+PAGE_PARENTS = {'patcher': 'access'}
 GROUPS = [
     ('digi-elf-1', 'Digi-Elf 1', 'NORMAL / MINIMUM font preview'),
     ('digi-elf-2', 'Digi-Elf 2', 'Stage-select dialogue and nine menu screens'),
@@ -32,6 +34,26 @@ GROUPS = [
     ('rock-1', 'Rock 1', 'Item MAX'),
     ('rock-2', 'Rock 2', 'Money MAX'),
 ]
+
+
+def navigation_markup(current):
+    def link(slug, label):
+        active = ' aria-current="page"' if slug == current else ''
+        return f'<a href="{slug}.html"{active}>{escape(label)}</a>'
+
+    items = ['<ul class="nav-items">']
+    for slug, label, _, _ in PAGES:
+        if slug in PAGE_PARENTS:
+            continue
+        items.append('<li>' + link(slug, label))
+        children = [(s, l) for s, l, _, _ in PAGES if PAGE_PARENTS.get(s) == slug]
+        if children:
+            items.append('<ul class="nav-submenu" aria-label="' + escape(label, quote=True) + ' guides">')
+            items.extend('<li>' + link(s, l) + '</li>' for s, l in children)
+            items.append('</ul>')
+        items.append('</li>')
+    items.append('</ul>')
+    return ''.join(items)
 
 
 def make_renderer():
@@ -126,7 +148,7 @@ def main():
         body = body.replace('<p>[[STAGES]]</p>', stage_markup(pages))
         body = body.replace('<p>[[GALLERY]]</p>', gallery_markup())
         body = body.replace('<table>', '<div class="table-scroll" role="region" aria-label="Reference table" tabindex="0"><table>').replace('</table>', '</table></div>')
-        navigation = ''.join(f'<a href="{s}.html"' + (' aria-current="page"' if s == slug else '') + f'>{escape(l)}</a>' for s, l, _, _ in PAGES)
+        navigation = navigation_markup(slug)
         header = f'<header class="page-header"><p class="page-eyebrow">Digimon World 4</p><h1>{escape(title)}</h1><p class="lede">{escape(description)}</p></header>'
         if slug == 'index':
             introduction, separator, following_sections = body.partition('<h2 ')

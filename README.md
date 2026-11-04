@@ -8,6 +8,8 @@ Includes the NPC menus and English translations, access notes, 97 stage-select e
 
 The access guide includes a standalone Python patcher that automatically detects PS2 (USA, Europe, Japan), GameCube (USA, Japan) and Xbox (USA, Japan) images and creates a separate developer-stage ISO. It supports PS2 ISO, GameCube ISO/GCM and CISO, and Xbox game-partition XISO. CISO input becomes a plain ISO. It contains no game data. It redirects the native login controller and enables the full developer stage NPC roster without changing saved progression flags.
 
+The Access submenu includes [How the patcher works](https://crashbashash.github.io/dw4-dev-stage/patcher.html), covering disc detection, release fingerprints, executable and NPC patch offsets, CISO expansion and Xbox section digests. Its source is `content/patcher.md`.
+
 ## Edit the documentation
 
 Edit the Markdown files in `content/` using GitHub’s file editor, then commit to `main`. The Publish website workflow builds, checks and deploys the site automatically. Edit `content/stages.json` for destination data; the published list and downloadable JSON are generated from the same file. Each destination records its ID and English stage name. System scenes without a named location have a null name and a scene description. The list can be filtered by name or ID.

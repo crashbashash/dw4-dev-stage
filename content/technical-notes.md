@@ -37,6 +37,8 @@ For USA PS2, USA GameCube, USA Xbox and European PS2, the patcher makes the two 
 
 The patch leaves the stage-select destinations and Leomon’s scripted return to the Main Lobby intact. Its output keeps the existing logical disc layout; GameCube CISO input is expanded into a plain ISO. See the [access guide](access.html) for supported releases and formats.
 
+For the implementation details, see [How the patcher works](patcher.html) under Access.
+
 ## Unlocks and cheats
 
 | Function | Script reference | Behaviour |

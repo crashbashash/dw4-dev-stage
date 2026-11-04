@@ -49,9 +49,13 @@ h3 { font-size: 16px; font-weight: 600; margin: 24px 0 12px; }
 .site-shell { max-width: 1440px; display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 32px; margin: auto; padding: 28px 24px 48px; }
 .sidebar { align-self: start; position: sticky; top: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 8px; }
 .nav-label { color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 0 10px; margin: 0 0 10px; }
-.sidebar nav > a { display: block; padding: 9px 12px; margin: 2px 0; color: var(--text-soft); font-size: 13px; border-radius: 5px; border-left: 3px solid transparent; }
-.sidebar nav > a:hover { background: var(--hover); text-decoration: none; }
-.sidebar nav > a[aria-current=page] { background: var(--accent-surface); color: var(--accent-text); font-weight: 600; border-left-color: var(--accent); }
+.nav-items, .nav-submenu { list-style: none; padding: 0; margin: 0; }
+.nav-items li { padding: 0; margin: 0; }
+.sidebar nav a { display: block; padding: 9px 12px; margin: 2px 0; color: var(--text-soft); font-size: 13px; border-radius: 5px; border-left: 3px solid transparent; }
+.sidebar nav a:hover { background: var(--hover); text-decoration: none; }
+.sidebar nav a[aria-current=page] { background: var(--accent-surface); color: var(--accent-text); font-weight: 600; border-left-color: var(--accent); }
+.nav-submenu { border-left: 1px solid var(--line-strong); margin: 2px 0 8px 18px; padding-left: 6px; }
+.sidebar .nav-submenu a { font-size: 12px; padding: 7px 9px; }
 main { min-width: 0; }
 .page-eyebrow { color: var(--muted); font-size: 12px; margin: 0 0 6px; }
 .page-header { padding: 0 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
@@ -126,8 +130,9 @@ pre code { color: var(--text); white-space: pre; overflow-wrap: normal; }
   .site-shell { display: block; padding: 16px 16px 32px; }
   .sidebar { position: static; margin-bottom: 24px; padding: 8px; }
   .nav-label { display: none; }
-  .sidebar nav { display: flex; flex-wrap: wrap; gap: 4px; }
-  .sidebar nav > a { margin: 0; padding: 7px 9px; font-size: 12px; }
+  .nav-items { display: flex; flex-wrap: wrap; gap: 4px; align-items: flex-start; }
+  .sidebar nav a { margin: 0; padding: 7px 9px; font-size: 12px; }
+  .nav-submenu { margin: 2px 0 4px 12px; padding-left: 4px; max-width: 150px; }
   .page-header { padding-bottom: 20px; margin-bottom: 20px; }
   h1 { font-size: 28px; }
   h2 { font-size: 20px; }

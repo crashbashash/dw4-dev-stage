@@ -35,6 +35,8 @@ python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --check
 
 The patch redirects the native login destination and enables the full NPC roster in releases where flag 960 would hide it. Saved progression flags are unchanged. [NPC visibility details →](technical-notes.html#npc-visibility-and-flag-960)
 
+[How the patcher works →](patcher.html) — a technical breakdown of disc detection, patch offsets, NPC visibility and output checks.
+
 ## Access methods
 
 | Method | How it works | What you need |
