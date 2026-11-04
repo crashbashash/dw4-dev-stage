@@ -27,8 +27,6 @@ python3 patch_dev_stage.py "Digimon World 4 (USA).iso" --output "Digimon World 4
 4. Open **Digimon World 4 - Developer Stage.iso** in the emulator for that platform.
 5. Load your Digimon and finish normal character selection. The transition that normally takes you to the Main Lobby now targets the developer stage.
 
-Start by booting the patched image; loading an existing savestate in another area bypasses the changed character-selection transition. If “Call Digimon” reports no game file, you need valid saved character data to continue through that route.
-
 Use your own image’s filename in the command above. No platform or region flags are needed; detection uses the disc’s contents rather than its filename.
 
 The patcher recognises the retail developer-stage and login packs and boot executable, and refuses altered patch targets or existing output files. To show the detected platform, region and patch plan without creating a new image:
